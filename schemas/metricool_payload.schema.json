@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MetricoolPayloadSchema",
+  "type": "object",
+  "required": [
+    "platform",
+    "text",
+    "dateTime",
+    "media",
+    "approval_token_id",
+    "verified_payload_sha256"
+  ],
+  "properties": {
+    "platform": { "type": "string", "enum": ["linkedin"] },
+    "text": { "type": "string", "minLength": 20 },
+    "dateTime": { "type": "string", "format": "date-time" },
+    "media": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["url_or_path", "type", "sha256"],
+        "properties": {
+          "url_or_path": { "type": "string" },
+          "type": { "type": "string", "enum": ["image", "video", "document"] },
+          "sha256": { "type": "string" }
+        }
+      }
+    },
+    "approval_token_id": { "type": "string" },
+    "verified_payload_sha256": { "type": "string" }
+  },
+  "additionalProperties": false
+}

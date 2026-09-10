@@ -1,0 +1,31 @@
+{
+  "approved_author_facts": {
+    "identity": {
+      "full_name": "Serhat",
+      "status": "Computer Engineering Undergraduate Student",
+      "current_focus": "Hardware-software integration, AI multi-agent orchestration, robotics, and low-level firmware engineering",
+      "location_timezone": "UTC+3",
+      "portfolio_url": "https://github.com/serhat"
+    },
+    "verified_technical_skills": {
+      "programming_languages": ["C", "C++17/20", "Python 3.12/3.13", "Rust (intermediate)", "Bash", "CMake"],
+      "embedded_hardware": ["STM32 (ARM Cortex-M4/M7)", "ESP32 / ESP32-S3", "Raspberry Pi 4/5", "Saleae Logic Analyzer", "Rigol Digital Oscilloscope"],
+      "protocols": ["SPI", "I2C", "UART", "CAN / CAN-FD", "Ethernet / LwIP", "DDS / micro-ROS"],
+      "ai_tooling": ["Antigravity", "Model Context Protocol (MCP)", "LangChain / LangGraph", "PyTorch", "TensorFlow Lite for Microcontrollers", "Ollama"],
+      "cad_and_manufacturing": ["Autodesk Fusion 360", "Bambu Lab X1-Carbon", "PETG-CF / ABS / TPU", "Threaded Heat-Set Inserts", "DFM"]
+    },
+    "verifiable_experience_claims": [
+      "Built multi-agent autonomous systems using Antigravity and tool-calling protocols.",
+      "Engineered FreeRTOS firmware running dual-core task scheduling on ESP32-S3 and STM32H7.",
+      "Designed and 3D-printed custom mechanical linkages and enclosures with tolerance fits down to 0.15mm.",
+      "Debugged hardware signal integrity issues using 4-channel digital oscilloscopes and 16-channel logic analyzers.",
+      "Implemented Field Oriented Control (FOC) algorithms for brushless DC motors over CAN-FD bus."
+    ],
+    "unapproved_or_prohibited_claims": [
+      "Any claim of holding a Master's or Ph.D. degree.",
+      "Any claim of 10+ years of industry experience.",
+      "Any claim of unverified commercial revenue, proprietary startup secrets, or NDA-protected client data.",
+      "Any claim of benchmark improvements without explicit baseline, hardware configuration, and reproducible test scripts."
+    ]
+  }
+}

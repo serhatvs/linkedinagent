@@ -1,0 +1,50 @@
+{
+  "lab_instruments": [
+    {
+      "model": "Rigol DS1054Z Digital Storage Oscilloscope",
+      "specs": "50MHz 4-channel, 1GSa/s real-time sample rate, 24Mpts memory depth",
+      "usage": "Signal integrity, clock jitter measurement, rise/fall time inspection"
+    },
+    {
+      "model": "Saleae Logic Pro 16",
+      "specs": "16 channels, up to 500 MS/s digital, USB 3.0",
+      "usage": "SPI, I2C, CAN-FD, and UART protocol decoding and timing analysis"
+    },
+    {
+      "model": "Korad KD3005D Benchtop Linear DC Power Supply",
+      "specs": "0-30V, 0-5A, continuous current limit and over-current protection",
+      "usage": "Bench bring-up, active power draw characterization"
+    }
+  ],
+  "microcontrollers_and_devboards": [
+    {
+      "board": "STM32H743ZI Nucleo-144",
+      "mcu": "ARM Cortex-M7 @ 480 MHz",
+      "logic_level": "3.3V (5V tolerant on specific designated pins only)",
+      "interfaces": ["DCMI", "Ethernet", "FD-CAN", "SPI (up to 150MHz)"]
+    },
+    {
+      "board": "ESP32-S3-DevKitC-1",
+      "mcu": "Xtensa Dual-Core 32-bit LX7 @ 240 MHz",
+      "logic_level": "3.3V ONLY (NOT 5V TOLERANT — Requires level shifter for 5V peripherals)",
+      "interfaces": ["USB-OTG", "TWAI (CAN 2.0B)", "SPI", "I2S", "I2C"]
+    }
+  ],
+  "manufacturing_and_rapid_prototyping": [
+    {
+      "machine": "Bambu Lab X1-Carbon 3D Printer",
+      "capabilities": "High-temp hardened steel nozzle up to 300°C, enclosed heated chamber up to 60°C",
+      "materials": ["PLA", "PETG", "PETG-CF (Carbon Fiber reinforced)", "ABS", "TPU 95A"],
+      "tolerances": "XY dimensional tolerance ±0.1mm; layer heights from 0.08mm to 0.28mm"
+    },
+    {
+      "tool": "TS101 Temperature-Controlled Soldering Station & Heat-Set Insert Press",
+      "capabilities": "Fine SMD rework, standard M2, M2.5, M3, M4 brass heat-set insert installation in thermoplastics"
+    }
+  ],
+  "safety_protocols": {
+    "mains_ac_rule": "No unshielded or breadboarded mains AC circuits allowed in public content. Must demonstrate galvanic isolation (optocoupler / isolation transformer / relays with creepage > 6mm).",
+    "lipo_safety_rule": "All LiPo battery projects must incorporate dedicated BMS / PCM modules with over-voltage, under-voltage cutoff (>= 3.0V/cell), and thermal cutoffs.",
+    "logic_level_rule": "Never drive 3.3V inputs (especially ESP32) with 5V logic without bidirectional level shifter or resistive divider."
+  }
+}

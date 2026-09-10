@@ -1,0 +1,28 @@
+{
+  "anti_patterns": [
+    {
+      "id": "ap_001",
+      "name": "Generic LLM Wrapper Hype",
+      "description": "Calling a 20-line API call to an LLM a 'revolutionary autonomous AI breakthrough'.",
+      "penalty": "Immediate Rejection"
+    },
+    {
+      "id": "ap_002",
+      "name": "Floating Simulation Claims",
+      "description": "Showing Gazebo or Isaac Sim robot walking and claiming 'my robot can navigate rough terrain' without clarifying it was in simulation.",
+      "penalty": "Immediate Rejection — DRC Violation"
+    },
+    {
+      "id": "ap_003",
+      "name": "Vanity Question Outro",
+      "description": "Ending posts with 'What do you think? Agree or disagree?' just to harvest low-quality comments.",
+      "penalty": "Immediate Rejection"
+    },
+    {
+      "id": "ap_004",
+      "name": "Unanchored Multiplier Claims",
+      "description": "Claiming '10x performance boost' without specifying the exact hardware, baseline framework, or benchmark suite.",
+      "penalty": "Grounding Failure"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "effective_hook_patterns": [
+    {
+      "pattern_name": "The Concrete Bottleneck Hook",
+      "template": "We noticed [metric] dropping from [X] to [Y] whenever [condition occurred]. Here is the root-cause trace in [subsystem].",
+      "conversion_impact": "High engagement from systems engineers"
+    },
+    {
+      "pattern_name": "The Counter-Intuitive Bug Hook",
+      "template": "The datasheet said [spec], but our logic analyzer showed [discrepancy]. Here is why [hardware nuance] tripped us up.",
+      "conversion_impact": "High bookmark rate"
+    }
+  ],
+  "optimal_technical_density": {
+    "recommended_word_count_range": [180, 350],
+    "target_reading_grade_level": "Technical Professional",
+    "required_concrete_metrics_count": 2
+  }
+}

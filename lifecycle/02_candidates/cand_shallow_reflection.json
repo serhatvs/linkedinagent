@@ -1,0 +1,18 @@
+{
+  "candidate_id": "cand_shallow_reflection",
+  "idea_id": "idea_shallow_reflection",
+  "pillar": "pillar_embedded_firmware",
+  "target_audience": [
+    "Firmware Engineers"
+  ],
+  "angle": "Conceptual Reflection",
+  "mvts_evaluation": {
+    "grounding_score": 1.0,
+    "technical_artifact_score": 0.0,
+    "engineering_tradeoff_score": 1.0,
+    "actionable_takeaway_score": 1.0,
+    "total_score": 3.0
+  },
+  "decision": "HOLD_NO_OP",
+  "hold_rationale": "Purely conceptual. Missing bench comparison, hardware benchmarks, and logic traces."
+}

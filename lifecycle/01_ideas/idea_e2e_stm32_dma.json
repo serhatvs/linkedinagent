@@ -1,0 +1,13 @@
+{
+  "idea_id": "idea_e2e_stm32_dma",
+  "created_at": "2026-09-10T19:57:20.953378+00:00",
+  "source_type": "github_commit",
+  "title": "Optimizing DMA buffer contention on STM32H7",
+  "raw_notes": "Observed 24% lower bus contention by partitioning SRAM banks during inference: <untrusted_source_data>optimize DMA ping-pong buffer on STM32H7, cut bus contention by 24%</untrusted_source_data>",
+  "pillar_affinity": "pillar_embedded_firmware",
+  "technical_artifacts_available": [
+    "logic_analyzer_trace",
+    "code_diff"
+  ],
+  "project_id": "proj_tinyml_edge_vision"
+}

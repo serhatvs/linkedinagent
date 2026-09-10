@@ -1,0 +1,21 @@
+{
+  "audience_signals": [
+    {
+      "signal_id": "sig_20260908_01",
+      "timestamp": "2026-09-08T18:12:00Z",
+      "signal_type": "inbound_dm",
+      "sender_title": "Founding Engineer @ Robotics Startup",
+      "topic": "CAN-FD transceiver isolation & ESP32 latency",
+      "referenced_pillar": "pillar_robotics_mechatronics",
+      "sentiment": "high_intent_technical_collaboration"
+    },
+    {
+      "signal_id": "sig_20260909_02",
+      "timestamp": "2026-09-09T09:45:00Z",
+      "signal_type": "profile_visit_spike",
+      "audience_segment": "Staff AI Engineers & Hardware System Architects",
+      "correlated_post_id": "post_tinyml_optimization_dma",
+      "action_taken": "Logged to memory; reaffirmed high technical value of DMA architecture topics"
+    }
+  ]
+}

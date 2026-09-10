@@ -1,0 +1,19 @@
+{
+  "candidate_id": "cand_e2e_stm32_dma",
+  "idea_id": "idea_e2e_stm32_dma",
+  "pillar": "pillar_embedded_firmware",
+  "target_audience": [
+    "Embedded Systems Engineers",
+    "Firmware Architects"
+  ],
+  "angle": "Memory Bus Matrix Architecture",
+  "mvts_evaluation": {
+    "grounding_score": 3.0,
+    "technical_artifact_score": 3.0,
+    "engineering_tradeoff_score": 2.0,
+    "actionable_takeaway_score": 1.8,
+    "total_score": 9.8
+  },
+  "decision": "PROCEED_TO_DRAFT",
+  "hold_rationale": null
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AnalyticsReportSchema",
+  "type": "object",
+  "required": [
+    "report_id",
+    "period_start",
+    "period_end",
+    "total_posts_published",
+    "total_impressions",
+    "quality_engagement_ratio",
+    "inbound_technical_leads",
+    "key_learnings"
+  ],
+  "properties": {
+    "report_id": { "type": "string" },
+    "period_start": { "type": "string", "format": "date-time" },
+    "period_end": { "type": "string", "format": "date-time" },
+    "total_posts_published": { "type": "integer" },
+    "total_impressions": { "type": "integer" },
+    "quality_engagement_ratio": { "type": "number" },
+    "inbound_technical_leads": { "type": "integer" },
+    "top_performing_pillar": { "type": "string" },
+    "key_learnings": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

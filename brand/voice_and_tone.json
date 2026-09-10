@@ -1,0 +1,37 @@
+{
+  "voice_attributes": {
+    "perspective": "First-person technical builder ('I observed', 'I benchmarked', 'Our firmware bottleneck was')",
+    "tone": "Direct, analytical, honest, intellectually humble, deeply technical",
+    "slop_tolerance": 0.0,
+    "max_emojis_per_post": 2,
+    "allowed_emoji_types": ["functional_indicator", "data_marker", "hazard_warning"]
+  },
+  "linguistic_constraints": {
+    "forbidden_buzzwords": [
+      "game-changer",
+      "paradigm shift",
+      "revolutionary",
+      "supercharge",
+      "unleash",
+      "seamlessly",
+      "delighted to share",
+      "thrilled to announce",
+      "in today's world",
+      "let that sink in",
+      "agree?",
+      "thoughts?"
+    ],
+    "forbidden_formatting": [
+      "excessive_line_breaks_for_dramatism",
+      "all_caps_shouting",
+      "fake_storytelling_hooks",
+      "engagement_pod_prompts"
+    ],
+    "required_elements": [
+      "explicit_technical_context",
+      "concrete_problem_statement",
+      "engineering_tradeoff_or_metric",
+      "verifiable_takeaway_or_code_reference"
+    ]
+  }
+}

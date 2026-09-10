@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "IdeaSchema",
+  "type": "object",
+  "required": ["idea_id", "created_at", "source_type", "title", "raw_notes", "pillar_affinity"],
+  "properties": {
+    "idea_id": { "type": "string", "pattern": "^idea_[a-z0-9_]+$" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "source_type": { "type": "string", "enum": ["github_commit", "github_issue", "lab_note", "bench_result", "direct_user_input"] },
+    "title": { "type": "string", "minLength": 5, "maxLength": 120 },
+    "raw_notes": { "type": "string", "minLength": 10 },
+    "pillar_affinity": { "type": "string", "enum": ["pillar_ai_agents", "pillar_embedded_firmware", "pillar_robotics_mechatronics", "pillar_3d_engineering", "pillar_software_infrastructure"] },
+    "technical_artifacts_available": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "project_id": { "type": ["string", "null"] }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,13 @@
+{
+  "idea_id": "idea_20260910_195613_9e2a1b",
+  "created_at": "2026-09-10T19:56:13.480657+00:00",
+  "source_type": "github_commit",
+  "title": "Optimizing DMA buffer contention on STM32H7 (commit 9e2a1b3)",
+  "raw_notes": "Observed 24% lower memory bus contention when implementing ping-pong buffers for camera feed during continuous MobileNetV2 inference.\nCommit message: <untrusted_source_data>add FreeRTOS semaphore synchronization to prevent I2C bus collision with display driver</untrusted_source_data>",
+  "pillar_affinity": "pillar_embedded_firmware",
+  "technical_artifacts_available": [
+    "logic_analyzer_trace",
+    "dma_manager.c_diff"
+  ],
+  "project_id": "proj_tinyml_edge_vision"
+}

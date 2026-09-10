@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EditorialScorecardSchema",
+  "type": "object",
+  "required": [
+    "evaluation_id",
+    "post_id",
+    "evaluated_at",
+    "scores",
+    "slop_analysis",
+    "domain_drc_checks",
+    "grounding_verification",
+    "verdict"
+  ],
+  "properties": {
+    "evaluation_id": { "type": "string" },
+    "post_id": { "type": "string" },
+    "evaluated_at": { "type": "string", "format": "date-time" },
+    "scores": {
+      "type": "object",
+      "required": ["technical_rigor", "clarity_and_flow", "visual_utility", "reader_roi", "composite_score"],
+      "properties": {
+        "technical_rigor": { "type": "number", "minimum": 0, "maximum": 25 },
+        "clarity_and_flow": { "type": "number", "minimum": 0, "maximum": 25 },
+        "visual_utility": { "type": "number", "minimum": 0, "maximum": 25 },
+        "reader_roi": { "type": "number", "minimum": 0, "maximum": 25 },
+        "composite_score": { "type": "number", "minimum": 0, "maximum": 100 }
+      }
+    },
+    "slop_analysis": {
+      "type": "object",
+      "required": ["slop_score", "detected_buzzwords", "emoji_count", "slop_detected"],
+      "properties": {
+        "slop_score": { "type": "number" },
+        "detected_buzzwords": { "type": "array", "items": { "type": "string" } },
+        "emoji_count": { "type": "integer" },
+        "slop_detected": { "type": "boolean" }
+      }
+    },
+    "domain_drc_checks": {
+      "type": "object",
+      "required": ["passed", "checks_run", "violations"],
+      "properties": {
+        "passed": { "type": "boolean" },
+        "checks_run": { "type": "array", "items": { "type": "string" } },
+        "violations": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "grounding_verification": {
+      "type": "object",
+      "required": ["grounding_percentage", "unverified_claims", "cited_sources"],
+      "properties": {
+        "grounding_percentage": { "type": "number", "minimum": 0, "maximum": 100 },
+        "unverified_claims": { "type": "array", "items": { "type": "string" } },
+        "cited_sources": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "verdict": {
+      "type": "string",
+      "enum": ["PASSED_EDITORIAL", "REVISE_REQUIRED", "REJECTED_SLOP_OR_DRC"]
+    }
+  },
+  "additionalProperties": false
+}

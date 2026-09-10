@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ApprovalTokenSchema",
+  "type": "object",
+  "required": [
+    "token_id",
+    "request_id",
+    "post_id",
+    "approved_by",
+    "signed_at",
+    "expires_at",
+    "nonce",
+    "action_scope",
+    "target_platform",
+    "canonical_payload_sha256",
+    "signature_digest"
+  ],
+  "properties": {
+    "token_id": { "type": "string", "pattern": "^token_[a-z0-9_]+$" },
+    "request_id": { "type": "string" },
+    "post_id": { "type": "string" },
+    "approved_by": { "type": "string", "enum": ["Serhat"] },
+    "signed_at": { "type": "string", "format": "date-time" },
+    "expires_at": { "type": "string", "format": "date-time" },
+    "nonce": { "type": "string" },
+    "action_scope": { "type": "string", "enum": ["METRICOOL_SCHEDULE", "METRICOOL_PUBLISH_NOW", "METRICOOL_COMMENT_REPLY"] },
+    "target_platform": { "type": "string", "enum": ["linkedin"] },
+    "canonical_payload_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "signature_digest": { "type": "string" }
+  },
+  "additionalProperties": false
+}

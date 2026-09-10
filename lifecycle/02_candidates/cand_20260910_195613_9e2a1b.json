@@ -1,0 +1,19 @@
+{
+  "candidate_id": "cand_20260910_195613_9e2a1b",
+  "idea_id": "idea_20260910_195613_9e2a1b",
+  "pillar": "pillar_embedded_firmware",
+  "target_audience": [
+    "Embedded Systems Engineers",
+    "Firmware Architects"
+  ],
+  "angle": "Root-Cause DMA Bus Contention Analysis",
+  "mvts_evaluation": {
+    "grounding_score": 3.0,
+    "technical_artifact_score": 3.0,
+    "engineering_tradeoff_score": 2.0,
+    "actionable_takeaway_score": 1.5,
+    "total_score": 9.5
+  },
+  "decision": "PROCEED_TO_DRAFT",
+  "hold_rationale": null
+}

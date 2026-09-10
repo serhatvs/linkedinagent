@@ -1,0 +1,13 @@
+{
+  "token_id": "token_86824bcdd95e",
+  "request_id": "appr_req_20260910_192925_a29153",
+  "post_id": "post_approval_test",
+  "approved_by": "Serhat",
+  "signed_at": "2026-09-10T19:29:25.674765+00:00",
+  "expires_at": "2026-09-17T19:29:25.674765+00:00",
+  "nonce": "03e9eecfe3144d68b9c27d69bff863bd",
+  "action_scope": "METRICOOL_SCHEDULE",
+  "target_platform": "linkedin",
+  "canonical_payload_sha256": "b816151f20fbe18bcbb1ffc54d4107c6d01b3bfb982d9d54030a02fd19a1cb36",
+  "signature_digest": "35e326b8193e8ea5d7e0ee5279a9ddb8d38322e84d66503168d5709576d017f2"
+}

@@ -1,0 +1,94 @@
+{
+  "projects": [
+    {
+      "project_id": "proj_antigravity_agency",
+      "name": "Antigravity Autonomous Personal Media Agency",
+      "pillar": "pillar_ai_agents",
+      "repo_url": "https://github.com/serhat/antigravity-personal-media-agency",
+      "summary": "Multi-agent autonomous personal brand and technical content engineering system using Antigravity, MCP, and strict cryptographic human-in-the-loop gates.",
+      "tech_stack": ["Python 3.13", "Antigravity", "Model Context Protocol", "Pydantic", "Pytest", "Metricool API"],
+      "verified_metrics": {
+        "lifecycle_stages": 9,
+        "slop_rejection_rate": "100% on prohibited keywords",
+        "hash_verification": "SHA-256 canonical envelope"
+      },
+      "active_milestones": [
+        "v1 core lifecycle and deterministic approval gate implementation",
+        "Deterministic grounding engine with AST claim parsing"
+      ]
+    },
+    {
+      "project_id": "proj_tinyml_edge_vision",
+      "name": "STM32H7 TinyML Low-Power Vision Tracker",
+      "pillar": "pillar_embedded_firmware",
+      "repo_url": "https://github.com/serhat/stm32h7-tinyml-tracker",
+      "summary": "Ultra-low-power edge vision system running quantized MobileNetV2 on STM32H743ZI Cortex-M7 with DCMI camera interface and SPI display.",
+      "tech_stack": ["C", "C++", "STM32CubeIDE", "FreeRTOS", "TensorFlow Lite for Microcontrollers", "OV5640"],
+      "verified_metrics": {
+        "clock_speed_mhz": 480,
+        "inference_latency_ms": 38.2,
+        "ram_footprint_kb": 412,
+        "int8_quantization_accuracy_top1": 87.4,
+        "sleep_current_ua": 18.5
+      },
+      "active_milestones": [
+        "DMA buffer ping-pong optimization reducing memory bus contention by 24%",
+        "Thermal characterization under sustained 20 FPS inference"
+      ]
+    },
+    {
+      "project_id": "proj_bldc_quadruped",
+      "name": "Quasi-Direct Drive Quadruped Robot Mechatronics",
+      "pillar": "pillar_robotics_mechatronics",
+      "repo_url": "https://github.com/serhat/qdd-quadruped-ros2",
+      "summary": "12-DOF quadruped robot using planetary gear 6:1 QDD actuators, Field Oriented Control (FOC) drivers over CAN-FD, and ROS2 micro-XRCE-DDS on ESP32.",
+      "tech_stack": ["C++", "ROS2 Humble", "SimpleFOC", "CAN-FD", "ESP32-S3", "Gazebo Sim"],
+      "verified_metrics": {
+        "total_mass_kg": 4.8,
+        "continuous_joint_torque_nm": 3.8,
+        "peak_joint_torque_nm": 11.2,
+        "can_bus_bandwidth_utilization_percent": 64.0,
+        "control_loop_freq_hz": 1000
+      },
+      "active_milestones": [
+        "Hardware bring-up of CAN-FD transceiver isolated bus",
+        "FOC current sensing filter calibration on DRV8302 board"
+      ]
+    },
+    {
+      "project_id": "proj_parametric_lab_enclosure",
+      "name": "Parametric Rugged IP54 Instrument Enclosure Ecosystem",
+      "pillar": "pillar_3d_engineering",
+      "repo_url": "https://github.com/serhat/parametric-rugged-enclosure",
+      "summary": "Parametric CAD enclosure design in Fusion 360 with molded silicone gaskets, brass threaded heat-set inserts, and optimized print orientation for shear resistance.",
+      "tech_stack": ["Autodesk Fusion 360", "Bambu Studio", "PETG-CF", "TPU 95A", "FEA Stress Analysis"],
+      "verified_metrics": {
+        "tensile_yield_strength_mpa": 68.0,
+        "wall_thickness_mm": 3.2,
+        "gasket_compression_percentage": 28.0,
+        "ingress_protection_rating": "IP54"
+      },
+      "active_milestones": [
+        "Interlocking labyrinth seal redesign to prevent capillary water ingress",
+        "Drop test analysis from 1.5m onto concrete"
+      ]
+    },
+    {
+      "project_id": "proj_async_kernel_telemetry",
+      "name": "High-Throughput Asynchronous Telemetry Ingestion Engine",
+      "pillar": "pillar_software_infrastructure",
+      "repo_url": "https://github.com/serhat/async-telemetry-engine",
+      "summary": "Sub-millisecond latency time-series telemetry ingestion pipeline built with Python AsyncIO, Rust PyO3 bindings, and memory-mapped ring buffers.",
+      "tech_stack": ["Python 3.13", "Rust", "PyO3", "Cap'n Proto", "Linux epoll"],
+      "verified_metrics": {
+        "throughput_events_per_sec": 142000,
+        "latency_p99_microseconds": 340,
+        "zero_allocation_inner_loop": true
+      },
+      "active_milestones": [
+        "SIMD vectorization for payload checksum validation",
+        "Ring buffer wrap-around lockless synchronization"
+      ]
+    }
+  ]
+}

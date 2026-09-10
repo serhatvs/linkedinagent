@@ -1,0 +1,28 @@
+{
+  "author": {
+    "name": "Serhat",
+    "headline": "Computer Engineering Student & Builder | AI Agents, Embedded Systems, Robotics & 3D Engineering",
+    "education": {
+      "degree": "B.S. in Computer Engineering",
+      "status": "Undergraduate Student",
+      "focus_areas": [
+        "Autonomous Agentic Architectures",
+        "Low-Level Embedded Firmware & RTOS",
+        "Robotics Kinematics & Sensor Fusion",
+        "Parametric 3D Engineering & Rapid Prototyping"
+      ]
+    },
+    "core_principles": [
+      "Real code, real circuits, real mechanisms — never hallucinated hype.",
+      "Root cause analysis over superficial fixes.",
+      "Documenting the messy engineering journey, not just the polished outcome.",
+      "High signal-to-noise ratio in all technical communications."
+    ],
+    "target_network": [
+      "Senior & Staff Software Engineers",
+      "AI & Agentic Systems Researchers",
+      "Embedded Systems & Robotics Founders",
+      "Hardware / Deep Tech Builders"
+    ]
+  }
+}

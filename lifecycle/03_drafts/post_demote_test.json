@@ -1,0 +1,24 @@
+{
+  "post_id": "post_demote_test",
+  "state_version": 3,
+  "lifecycle_state": "DRAFT",
+  "pillar": "pillar_embedded_firmware",
+  "author": "Serhat",
+  "title": "Original Title",
+  "content_text": "Updated content text requiring re-review.",
+  "media_assets": [],
+  "citations": [
+    {
+      "claim_text": "STM32",
+      "source_type": "project_registry",
+      "reference_id": "proj_tinyml_edge_vision"
+    }
+  ],
+  "scorecard_id": null,
+  "approval_request_id": null,
+  "scheduled_publish_time": null,
+  "metricool_post_id": null,
+  "linkedin_url": null,
+  "created_at": "2026-09-10T19:57:21.089362+00:00",
+  "updated_at": "2026-09-10T19:57:21.106904+00:00"
+}

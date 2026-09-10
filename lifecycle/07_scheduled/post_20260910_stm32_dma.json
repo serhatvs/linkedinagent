@@ -1,0 +1,36 @@
+{
+  "post_id": "post_20260910_stm32_dma",
+  "state_version": 5,
+  "lifecycle_state": "SCHEDULED",
+  "pillar": "pillar_embedded_firmware",
+  "author": "Serhat",
+  "title": "Fixing STM32H7 DMA Bus Contention Under 20 FPS Edge Vision",
+  "content_text": "While running INT8 MobileNetV2 on an STM32H743ZI at 480 MHz, we hit an unexpected 28ms frame drop.\n\nThe DCMI camera interface and the SPI display driver were competing for the same AXI SRAM bank, stalling the Cortex-M7 core on bus arbitration.\n\nHere is the architectural pattern that resolved it:\n1. Relocated camera DMA rx buffers to SRAM1 (D2 domain).\n2. Kept the model tensor arena in AXI SRAM (D1 domain).\n3. Configured ping-pong double buffering with circular DMA interrupts.\n\nResult: Memory bus contention dropped by 24%, restoring a sustained 20 FPS inference pipeline without frame jitter.\n\nWhen designing high-throughput vision on Cortex-M7, never treat internal RAM as a homogeneous pool. Domain bus matrix boundaries matter.",
+  "media_assets": [
+    {
+      "asset_type": "logic_trace",
+      "asset_path": "assets/stm32h7_dma_trace.png",
+      "asset_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "caption": "Saleae Logic Pro 16 capture showing SPI display vs DCMI DMA bus arbitration."
+    }
+  ],
+  "citations": [
+    {
+      "claim_text": "STM32H743ZI running at 480MHz with INT8 MobileNetV2",
+      "source_type": "project_registry",
+      "reference_id": "proj_tinyml_edge_vision"
+    },
+    {
+      "claim_text": "STM32 ARM Cortex-M7 embedded hardware development",
+      "source_type": "knowledge_fact",
+      "reference_id": "stm32 (arm cortex-m4/m7)"
+    }
+  ],
+  "scorecard_id": "eval_74cf6e28db47",
+  "approval_request_id": "appr_req_20260910_195638_131d82",
+  "scheduled_publish_time": "2026-09-11T19:57:08.844337+00:00",
+  "metricool_post_id": "metricool_mock_31e184ed00d5",
+  "linkedin_url": null,
+  "created_at": "2026-09-10T19:56:28.907583+00:00",
+  "updated_at": "2026-09-10T19:57:08.855271+00:00"
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CandidateSchema",
+  "type": "object",
+  "required": [
+    "candidate_id",
+    "idea_id",
+    "pillar",
+    "target_audience",
+    "angle",
+    "mvts_evaluation",
+    "decision"
+  ],
+  "properties": {
+    "candidate_id": { "type": "string", "pattern": "^cand_[a-z0-9_]+$" },
+    "idea_id": { "type": "string" },
+    "pillar": { "type": "string" },
+    "target_audience": { "type": "array", "items": { "type": "string" } },
+    "angle": { "type": "string" },
+    "mvts_evaluation": {
+      "type": "object",
+      "required": ["grounding_score", "technical_artifact_score", "engineering_tradeoff_score", "actionable_takeaway_score", "total_score"],
+      "properties": {
+        "grounding_score": { "type": "number", "minimum": 0, "maximum": 3 },
+        "technical_artifact_score": { "type": "number", "minimum": 0, "maximum": 3 },
+        "engineering_tradeoff_score": { "type": "number", "minimum": 0, "maximum": 2 },
+        "actionable_takeaway_score": { "type": "number", "minimum": 0, "maximum": 2 },
+        "total_score": { "type": "number", "minimum": 0, "maximum": 10 }
+      }
+    },
+    "decision": {
+      "type": "string",
+      "enum": ["PROCEED_TO_DRAFT", "HOLD_NO_OP", "REJECT"]
+    },
+    "hold_rationale": { "type": ["string", "null"] }
+  },
+  "additionalProperties": false
+}

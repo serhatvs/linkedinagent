@@ -1,0 +1,10 @@
+{
+  "idea_id": "idea_shallow_reflection",
+  "created_at": "2026-09-10T19:57:21.108466+00:00",
+  "source_type": "lab_note",
+  "title": "Thinking about microcontrollers vs FPGAs",
+  "raw_notes": "Had some general thoughts on when to use an FPGA vs an MCU for robotics.",
+  "pillar_affinity": "pillar_embedded_firmware",
+  "technical_artifacts_available": [],
+  "project_id": null
+}

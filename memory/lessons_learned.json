@@ -1,0 +1,18 @@
+{
+  "lessons": [
+    {
+      "lesson_id": "lesson_001",
+      "timestamp": "2026-09-01T12:00:00Z",
+      "domain": "embedded_firmware",
+      "observation": "Posts featuring real logic analyzer traces showing timing jitter received 4x more comments from staff engineers than posts merely discussing the theoretical protocol.",
+      "actionable_rule": "Always pair protocol or bus debugging posts with an annotated oscilloscope or logic analyzer capture."
+    },
+    {
+      "lesson_id": "lesson_002",
+      "timestamp": "2026-09-05T14:30:00Z",
+      "domain": "ai_agents",
+      "observation": "Highlighting edge-case failure modes and how the deterministic guardrail recovered the system drove 3 inbound collaboration inquiries from founders.",
+      "actionable_rule": "Emphasize failure mitigation and error budgets over simplistic 'happy path' demos."
+    }
+  ]
+}

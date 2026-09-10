@@ -1,0 +1,94 @@
+{
+  "pillars": [
+    {
+      "id": "pillar_ai_agents",
+      "name": "Autonomous AI Agents & Cognitive Systems",
+      "weight": 0.35,
+      "core_themes": [
+        "Multi-agent orchestration and failure recovery",
+        "Deterministic guardrails vs probabilistic LLM reasoning",
+        "Tool use benchmarks, evaluation, and latency optimization",
+        "Local LLM deployment and edge intelligence"
+      ],
+      "target_audiences": [
+        "AI Engineers & Researchers",
+        "Founders of AI startups",
+        "Technical Architects"
+      ],
+      "required_artifacts": ["Architecture block diagram", "Execution benchmark / latency trace", "Failure recovery log"]
+    },
+    {
+      "id": "pillar_embedded_firmware",
+      "name": "Embedded Systems & Low-Level Firmware",
+      "weight": 0.20,
+      "core_themes": [
+        "Bare-metal C/C++ and FreeRTOS concurrency on STM32 / ESP32",
+        "Hardware bus protocol debugging (SPI, I2C, UART, CAN)",
+        "Memory profiling, DMA transfers, and interrupt latency",
+        "Ultra-low-power sleep optimization"
+      ],
+      "target_audiences": [
+        "Embedded Systems Engineers",
+        "Firmware Architects",
+        "IoT Hardware Founders"
+      ],
+      "required_artifacts": ["Logic analyzer trace", "Memory map / register dump", "Schematic snippet"]
+    },
+    {
+      "id": "pillar_robotics_mechatronics",
+      "name": "Robotics & Mechatronics",
+      "weight": 0.15,
+      "core_themes": [
+        "Kinematics and actuator control (Field Oriented Control, Stepper)",
+        "Sensor fusion (Extended Kalman Filters, IMU, LiDAR)",
+        "Sim-to-real transfer and physics engine validation",
+        "ROS2 node architecture and deterministic communication"
+      ],
+      "target_audiences": [
+        "Robotics Engineers",
+        "Mechatronics Specialists",
+        "Physical AI Developers"
+      ],
+      "required_artifacts": ["CAD render / physical test clip", "Kinematics calculation / telemetry plot"]
+    },
+    {
+      "id": "pillar_3d_engineering",
+      "name": "3D Engineering & Rapid Hardware Prototyping",
+      "weight": 0.15,
+      "core_themes": [
+        "Parametric CAD modeling for functional enclosures",
+        "DFM (Design for Manufacturing) and tolerance analysis",
+        "FDM/SLA 3D printing parameter tuning for structural load",
+        "Thermal management and mechanical stress distribution"
+      ],
+      "target_audiences": [
+        "Hardware Designers",
+        "Product Engineers",
+        "Mechanical Enthusiasts"
+      ],
+      "required_artifacts": ["Cross-section CAD view", "Stress analysis FEA or physical break-test photo"]
+    },
+    {
+      "id": "pillar_software_infrastructure",
+      "name": "Software Engineering & Systems Infrastructure",
+      "weight": 0.15,
+      "core_themes": [
+        "Distributed backend systems and microservices",
+        "Developer CLI tooling and performance profiling",
+        "Reliability engineering and root-cause post-mortems",
+        "Data streaming and state machine implementations"
+      ],
+      "target_audiences": [
+        "Senior Backend Engineers",
+        "Staff Infrastructure Engineers",
+        "Engineering Managers"
+      ],
+      "required_artifacts": ["Code diff", "Flamegraph / benchmark chart", "State machine transition diagram"]
+    }
+  ],
+  "content_scoring_thresholds": {
+    "minimum_viable_technical_substance_score": 8.0,
+    "max_slop_index": 0.0,
+    "required_grounding_coverage_percent": 100.0
+  }
+}

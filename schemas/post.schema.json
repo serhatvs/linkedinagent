@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PostSchema",
+  "type": "object",
+  "required": [
+    "post_id",
+    "state_version",
+    "lifecycle_state",
+    "pillar",
+    "author",
+    "title",
+    "content_text",
+    "media_assets",
+    "citations",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "post_id": { "type": "string", "pattern": "^post_[a-z0-9_]+$" },
+    "state_version": { "type": "integer", "minimum": 1 },
+    "lifecycle_state": {
+      "type": "string",
+      "enum": [
+        "IDEA",
+        "CANDIDATE",
+        "DRAFT",
+        "REVIEWED",
+        "AWAITING_APPROVAL",
+        "APPROVED",
+        "SCHEDULED",
+        "PUBLISHED",
+        "ANALYZED"
+      ]
+    },
+    "pillar": { "type": "string" },
+    "author": { "type": "string", "enum": ["Serhat"] },
+    "title": { "type": "string" },
+    "content_text": { "type": "string" },
+    "media_assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["asset_type", "asset_path", "asset_sha256", "caption"],
+        "properties": {
+          "asset_type": { "type": "string", "enum": ["schematic", "code_snippet", "logic_trace", "cad_render", "benchmark_chart", "hardware_photo"] },
+          "asset_path": { "type": "string" },
+          "asset_sha256": { "type": "string" },
+          "caption": { "type": "string" }
+        }
+      }
+    },
+    "citations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["claim_text", "source_type", "reference_id"],
+        "properties": {
+          "claim_text": { "type": "string" },
+          "source_type": { "type": "string", "enum": ["knowledge_fact", "project_registry", "git_commit", "lab_spec"] },
+          "reference_id": { "type": "string" }
+        }
+      }
+    },
+    "scorecard_id": { "type": ["string", "null"] },
+    "approval_request_id": { "type": ["string", "null"] },
+    "scheduled_publish_time": { "type": ["string", "null"], "format": "date-time" },
+    "metricool_post_id": { "type": ["string", "null"] },
+    "linkedin_url": { "type": ["string", "null"] },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" }
+  },
+  "additionalProperties": false
+}
