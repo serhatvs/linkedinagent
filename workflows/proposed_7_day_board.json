@@ -1,0 +1,63 @@
+{
+  "board_version": "1.0.0",
+  "generated_at": "2026-09-11T00:06:00Z",
+  "planning_window": "7-Day Strategic Editorial Cadence",
+  "prime_principle": "Silence over slop. Posting frequency is strictly capped at 2 high-signal technical posts per week. Zero filler.",
+  "schedule": [
+    {
+      "day": "Day 1 (Monday)",
+      "decision": "PUBLISH_CANDIDATE_PENDING_APPROVAL",
+      "candidate_id": "cand_usb_01",
+      "post_id": "post_usb_display_tiling",
+      "title": "Bypassing Android Decoder Macroblock Limits with Dual-Strip NVENC Tiling",
+      "pillar": "pillar_low_level_systems_and_graphics",
+      "action_required": "Serhat signs approval token for appr_req_20260910_210633_03611c via CLI.",
+      "strategic_objective": "Establish elite technical credibility among low-level systems, C++, and Android engineers."
+    },
+    {
+      "day": "Day 2 (Tuesday)",
+      "decision": "COLLECT_MEDIA_AND_ASSETS",
+      "candidate_id": "cand_usb_02",
+      "title": "We measured 48ms latency and disproved our own queueing hypothesis",
+      "action_required": "Export latency waterfall chart and timestamp acknowledgment packet capture from usb-display logs.",
+      "strategic_objective": "Prepare verified empirical evidence for next week's post-mortem."
+    },
+    {
+      "day": "Day 3 (Wednesday)",
+      "decision": "NO_POST_DEEP_BUILD_DAY",
+      "candidate_id": null,
+      "rationale": "Real builders spend midweek in the IDE and lab. Publishing on back-to-back days dilutes audience focus and signals content-mill behavior.",
+      "action_required": "None."
+    },
+    {
+      "day": "Day 4 (Thursday)",
+      "decision": "PREPARE_AND_REVIEW_DRAFT",
+      "candidate_id": "cand_jarvis_01",
+      "title": "The 5 Sources of Truth: Why cognitive systems should separate Identity, Beliefs, and Capabilities",
+      "pillar": "pillar_cognitive_architectures",
+      "action_required": "MediaDirector drafts post from JARVIS architectural specifications and submits to Editorial Review.",
+      "strategic_objective": "Engage senior AI systems researchers with durable state architecture insights."
+    },
+    {
+      "day": "Day 5 (Friday)",
+      "decision": "MANUAL_COMMUNITY_ENGAGEMENT",
+      "candidate_id": null,
+      "action_required": "Serhat reviews triaged high-signal technical comments from Monday's post. Answers architecture questions directly.",
+      "strategic_objective": "Deepen relationships with staff engineers who engaged with technical queries."
+    },
+    {
+      "day": "Day 6 (Saturday)",
+      "decision": "LAB_EXPERIMENTS_AND_RESEARCH",
+      "candidate_id": "cand_3dprinter_01",
+      "action_required": "Log Saleae logic analyzer traces for ESP32-S3 to Arduino Mega UART semantic packet frames.",
+      "strategic_objective": "Ground the distributed 3-MCU 3D printer candidate in hardware-level signal traces."
+    },
+    {
+      "day": "Day 7 (Sunday)",
+      "decision": "WEEKLY_EDITORIAL_BOARD_RETROSPECTIVE",
+      "candidate_id": null,
+      "action_required": "Agency compiles weekly performance memo, reviews pillar balance, and updates memory/lessons_learned.json.",
+      "strategic_objective": "Empirical feedback loop calibration for upcoming week."
+    }
+  ]
+}

@@ -1,27 +1,108 @@
 {
   "projects": [
     {
-      "project_id": "proj_antigravity_agency",
-      "name": "Antigravity Autonomous Personal Media Agency",
-      "pillar": "pillar_ai_agents",
-      "repo_url": "https://github.com/serhat/antigravity-personal-media-agency",
-      "summary": "Multi-agent autonomous personal brand and technical content engineering system using Antigravity, MCP, and strict cryptographic human-in-the-loop gates.",
-      "tech_stack": ["Python 3.13", "Antigravity", "Model Context Protocol", "Pydantic", "Pytest", "Metricool API"],
+      "project_id": "proj_usb_display",
+      "name": "usb-display: Native 2560x1600 Windows Display on Android Tablet over USB",
+      "pillar": "pillar_software_infrastructure",
+      "repo_url": "https://github.com/serhatvs/usb-display",
+      "summary": "Low-latency display streaming system using Windows Desktop Duplication, dual-strip NVENC H.264 tiling to bypass tablet MediaCodec limits, and ADB reverse TCP loopback.",
+      "tech_stack": ["C++", "CMake", "NVIDIA NVENC", "DirectX / Desktop Duplication", "Kotlin", "Android MediaCodec", "ADB"],
       "verified_metrics": {
-        "lifecycle_stages": 9,
-        "slop_rejection_rate": "100% on prohibited keywords",
-        "hash_verification": "SHA-256 canonical envelope"
+        "native_resolution": "2560x1600",
+        "sustained_fps": 45.3,
+        "median_latency_ms": 48.0,
+        "p95_latency_ms": 68.0,
+        "dropped_frames": 0,
+        "average_bitrate_mbps": 20.0,
+        "usb_bandwidth_utilization_percent": 7.0,
+        "strip_tiling": "2 strips @ 2560x800",
+        "macroblock_ceiling_workaround": "14400 limit bypassed with dual 8000 macroblock instances"
       },
       "active_milestones": [
-        "v1 core lifecycle and deterministic approval gate implementation",
-        "Deterministic grounding engine with AST claim parsing"
+        "Proved latency is fixed pipeline delay (not queue backlog) by testing at 30 fps",
+        "Implemented UAC-free launch using elevated Windows Task Scheduler triggers",
+        "Survive tablet screen-off without host-side crash"
+      ]
+    },
+    {
+      "project_id": "proj_jarvis_core",
+      "name": "JARVIS: Persistent Personal Cognitive Operating System",
+      "pillar": "pillar_ai_agents",
+      "repo_url": "https://github.com/serhatvs/JARVIS",
+      "summary": "Persistent cognitive OS with append-only experience ledgers, belief extraction pipelines, durable task leases, and crash recovery.",
+      "tech_stack": ["Python 3.13", "PySide6", "AsyncIO", "SQLite", "BM25 / FAISS", "Pydantic", "ToolSmith"],
+      "verified_metrics": {
+        "sources_of_truth": 5,
+        "canonical_tables": 21,
+        "unit_test_suite_size": 213,
+        "regressions": 0,
+        "belief_n_plus_one_optimization": "Reduced 2N+1 SQL queries down to 3 independent of N",
+        "milestone_1_priorities_completed": 15
+      },
+      "active_milestones": [
+        "ToolSmith crash recovery after process death",
+        "Durable cloud transition bridge queue",
+        "Task budget enforcement across 4 orthogonal dimensions"
+      ]
+    },
+    {
+      "project_id": "proj_3dprinter_firmware",
+      "name": "Distributed 3-MCU 3D Printer Firmware Architecture",
+      "pillar": "pillar_embedded_firmware",
+      "repo_url": "https://github.com/serhatvs/3dprinter",
+      "summary": "Custom 3D printer running on a distributed 3-MCU architecture: ESP32-S3 real-time motion controller, ESP32-S3 UI/network manager, and Arduino Mega 2560 auxiliary I/O.",
+      "tech_stack": ["C++", "FreeRTOS", "ESP32-S3-WROOM-1", "Arduino Mega 2560", "TMC2209", "UART", "SPI"],
+      "verified_metrics": {
+        "mcu_count": 3,
+        "motion_channels": 4,
+        "main_power_rail_v": 24.0,
+        "stepper_drivers": "TMC2209 over STEP/DIR/UART",
+        "authority_principle": "MCU_MOTION is sole authority over stepper step generation; MCU_UI sends semantic commands only"
+      },
+      "active_milestones": [
+        "Inter-MCU UART packet serialization and CRC verification",
+        "Deterministic emergency halt protocol across distributed buses"
+      ]
+    },
+    {
+      "project_id": "proj_leshield_protocol",
+      "name": "LeShield: Privacy-Preserving Programmable Trust Infrastructure",
+      "pillar": "pillar_software_infrastructure",
+      "repo_url": "https://github.com/serhatvs/LeShield",
+      "summary": "Decentralized identity and compliance architecture for Monad Metropolis hackathon using client-side Groth16 ZK-proofs and passkey PRFs.",
+      "tech_stack": ["Zero-Knowledge Proofs (Groth16)", "Predicate DSL", "Monad Smart Contracts", "BBS+", "BabyJubjub EdDSA", "Passkey / WebAuthn PRF"],
+      "verified_metrics": {
+        "pii_on_chain": 0,
+        "proof_system": "Groth16 client-side witness generation",
+        "signature_schemes": ["BBS+", "BabyJubjub EdDSA"],
+        "target_network": "Monad Metropolis"
+      },
+      "active_milestones": [
+        "Formal Predicate DSL specification for accredited investor and KYC checks",
+        "Presentation privacy architecture with non-linkable nullifiers"
+      ]
+    },
+    {
+      "project_id": "proj_chronos_rag",
+      "name": "Chronos Local Zero-Budget RAG Knowledge Base",
+      "pillar": "pillar_ai_agents",
+      "repo_url": "https://github.com/serhatvs/chronos-rag",
+      "summary": "Zero-budget local RAG pipeline using heading-aware deterministic Markdown chunking, local FAISS vector indexing, and embedding cache.",
+      "tech_stack": ["Python 3.13", "FAISS", "SentenceTransformers", "Markdown Parser"],
+      "verified_metrics": {
+        "cloud_api_cost": "$0.00",
+        "chunking_strategy": "Heading-aware deterministic tree split (#, ##, ###)",
+        "vector_store": "Local FAISS index"
+      },
+      "active_milestones": [
+        "Stable document hashing to eliminate re-indexing unchanged docs"
       ]
     },
     {
       "project_id": "proj_tinyml_edge_vision",
       "name": "STM32H7 TinyML Low-Power Vision Tracker",
       "pillar": "pillar_embedded_firmware",
-      "repo_url": "https://github.com/serhat/stm32h7-tinyml-tracker",
+      "repo_url": "https://github.com/serhatvs/stm32h7-tinyml-tracker",
       "summary": "Ultra-low-power edge vision system running quantized MobileNetV2 on STM32H743ZI Cortex-M7 with DCMI camera interface and SPI display.",
       "tech_stack": ["C", "C++", "STM32CubeIDE", "FreeRTOS", "TensorFlow Lite for Microcontrollers", "OV5640"],
       "verified_metrics": {
@@ -34,60 +115,6 @@
       "active_milestones": [
         "DMA buffer ping-pong optimization reducing memory bus contention by 24%",
         "Thermal characterization under sustained 20 FPS inference"
-      ]
-    },
-    {
-      "project_id": "proj_bldc_quadruped",
-      "name": "Quasi-Direct Drive Quadruped Robot Mechatronics",
-      "pillar": "pillar_robotics_mechatronics",
-      "repo_url": "https://github.com/serhat/qdd-quadruped-ros2",
-      "summary": "12-DOF quadruped robot using planetary gear 6:1 QDD actuators, Field Oriented Control (FOC) drivers over CAN-FD, and ROS2 micro-XRCE-DDS on ESP32.",
-      "tech_stack": ["C++", "ROS2 Humble", "SimpleFOC", "CAN-FD", "ESP32-S3", "Gazebo Sim"],
-      "verified_metrics": {
-        "total_mass_kg": 4.8,
-        "continuous_joint_torque_nm": 3.8,
-        "peak_joint_torque_nm": 11.2,
-        "can_bus_bandwidth_utilization_percent": 64.0,
-        "control_loop_freq_hz": 1000
-      },
-      "active_milestones": [
-        "Hardware bring-up of CAN-FD transceiver isolated bus",
-        "FOC current sensing filter calibration on DRV8302 board"
-      ]
-    },
-    {
-      "project_id": "proj_parametric_lab_enclosure",
-      "name": "Parametric Rugged IP54 Instrument Enclosure Ecosystem",
-      "pillar": "pillar_3d_engineering",
-      "repo_url": "https://github.com/serhat/parametric-rugged-enclosure",
-      "summary": "Parametric CAD enclosure design in Fusion 360 with molded silicone gaskets, brass threaded heat-set inserts, and optimized print orientation for shear resistance.",
-      "tech_stack": ["Autodesk Fusion 360", "Bambu Studio", "PETG-CF", "TPU 95A", "FEA Stress Analysis"],
-      "verified_metrics": {
-        "tensile_yield_strength_mpa": 68.0,
-        "wall_thickness_mm": 3.2,
-        "gasket_compression_percentage": 28.0,
-        "ingress_protection_rating": "IP54"
-      },
-      "active_milestones": [
-        "Interlocking labyrinth seal redesign to prevent capillary water ingress",
-        "Drop test analysis from 1.5m onto concrete"
-      ]
-    },
-    {
-      "project_id": "proj_async_kernel_telemetry",
-      "name": "High-Throughput Asynchronous Telemetry Ingestion Engine",
-      "pillar": "pillar_software_infrastructure",
-      "repo_url": "https://github.com/serhat/async-telemetry-engine",
-      "summary": "Sub-millisecond latency time-series telemetry ingestion pipeline built with Python AsyncIO, Rust PyO3 bindings, and memory-mapped ring buffers.",
-      "tech_stack": ["Python 3.13", "Rust", "PyO3", "Cap'n Proto", "Linux epoll"],
-      "verified_metrics": {
-        "throughput_events_per_sec": 142000,
-        "latency_p99_microseconds": 340,
-        "zero_allocation_inner_loop": true
-      },
-      "active_milestones": [
-        "SIMD vectorization for payload checksum validation",
-        "Ring buffer wrap-around lockless synchronization"
       ]
     }
   ]

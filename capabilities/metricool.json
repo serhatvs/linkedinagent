@@ -1,0 +1,42 @@
+{
+  "server_name": "metricool-mcp",
+  "connection_status": "OFFLINE_SIMULATION_ONLY",
+  "authentication_status": "NO_TOKEN_CONFIGURED",
+  "auth_variables": [
+    "METRICOOL_USER_TOKEN",
+    "METRICOOL_BLOG_ID"
+  ],
+  "transport": "stdio",
+  "command": "python -m core.mcp_gateways --server metricool",
+  "detected_capabilities": {
+    "tools_exposed": [
+      "metricool_schedule_post (GATED)",
+      "metricool_get_analytics (DRY_RUN)",
+      "metricool_get_comments (DRY_RUN)"
+    ],
+    "read_capabilities": {
+      "live_post_analytics": false,
+      "live_profile_analytics": false,
+      "live_comment_stream": false,
+      "dry_run_simulation_analytics": true
+    },
+    "write_capabilities": {
+      "schedule_post": false,
+      "publish_post": false,
+      "reply_comment": false,
+      "send_dm": false
+    },
+    "analytics_capabilities": {
+      "impressions": false,
+      "engagements": false,
+      "clicks": false,
+      "follower_growth": false
+    }
+  },
+  "limitations": [
+    "METRICOOL_USER_TOKEN and METRICOOL_BLOG_ID are not set in the environment.",
+    "Real historical LinkedIn post data cannot be fetched from the Metricool API without active credentials.",
+    "External publishing is strictly blocked both by missing credentials and by the agency's human-in-the-loop cryptographic approval gate."
+  ],
+  "degraded_mode_behavior": "Historical LinkedIn analytics are marked as UNAVAILABLE. The agency operates in strict dry-run mode for dispatch and refuses to hallucinate historical audience numbers. Pipeline relies on local benchmarks and known audience signals."
+}

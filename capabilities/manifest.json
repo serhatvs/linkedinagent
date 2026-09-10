@@ -1,0 +1,25 @@
+{
+  "manifest_version": "1.0.0",
+  "generated_at": "2026-09-11T00:04:00Z",
+  "environment": "Windows PowerShell (x64) / Python 3.13.15",
+  "gateways": {
+    "github": {
+      "manifest_path": "capabilities/github.json",
+      "status": "DEGRADED_FALLBACK_ACTIVE",
+      "primary_mode": "local_disk_git_plus_unauthenticated_rest",
+      "can_read_code": true,
+      "can_write": false
+    },
+    "metricool": {
+      "manifest_path": "capabilities/metricool.json",
+      "status": "OFFLINE_SIMULATION_ONLY",
+      "primary_mode": "dry_run_with_approval_gate",
+      "can_read_analytics": false,
+      "can_write": false
+    }
+  },
+  "operational_rules": {
+    "fabrication_policy": "STRICT_ZERO_TOLERANCE. If analytics or private commits are inaccessible, mark as UNAVAILABLE. Never invent numbers or fake profile engagement.",
+    "publishing_policy": "NO_WRITE_ALLOWED. Even in dry-run, publishing is simulated locally."
+  }
+}

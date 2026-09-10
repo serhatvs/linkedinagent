@@ -1,0 +1,38 @@
+{
+  "report_id": "historical_baseline_v1",
+  "generated_at": "2026-09-11T00:05:00Z",
+  "status": "HISTORICAL_DATA_UNAVAILABLE",
+  "reason": "Metricool API credentials (METRICOOL_USER_TOKEN / METRICOOL_BLOG_ID) not configured in the current environment.",
+  "data_fabrication_prevention": "In accordance with Prime Directive and Rule 2, no historical impression, reaction, or follower numbers have been fabricated.",
+  "cold_start_baseline": {
+    "profile_url": "https://www.linkedin.com/in/serhat-yavuz-70593b370/",
+    "author_identity": "Serhat Yavuz, Computer Engineering Student at Abdullah Gül University (AGU)",
+    "current_stage": "Early Builder / Pre-Broadcast Technical Foundation",
+    "target_audience": [
+      "Staff & Senior Firmware Engineers",
+      "AI Systems & Cognitive Architecture Researchers",
+      "Robotics & Hardware Startup Founders",
+      "High-Caliber Student Engineering Peers"
+    ],
+    "qualitative_baseline_hypotheses": [
+      {
+        "hypothesis": "Deep technical post-mortems with real hardware numbers (e.g. 48ms latency on 2560x1600 USB display) will attract 5x more meaningful profile visits from staff engineers than general conceptual posts.",
+        "validation_metric": "Profile visits from engineers + inbound technical questions"
+      },
+      {
+        "hypothesis": "Concrete architecture diagrams (e.g. 3-MCU distributed 3D printer authority model) will outperform generic project announcements in saves and shares.",
+        "validation_metric": "Saves / sends ratio per impression"
+      }
+    ]
+  },
+  "ingestion_readiness": {
+    "supported_metrics_on_auth": [
+      "post_impressions",
+      "unique_reach",
+      "engagements_breakdown",
+      "comments_sentiment_and_seniority",
+      "profile_views_delta"
+    ],
+    "next_step_for_serhat": "Provide METRICOOL_USER_TOKEN and METRICOOL_BLOG_ID in environment when live analytics ingestion is desired."
+  }
+}

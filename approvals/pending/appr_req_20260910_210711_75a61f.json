@@ -1,0 +1,19 @@
+{
+  "request_id": "appr_req_20260910_210711_75a61f",
+  "post_id": "post_e2e_stm32_dma",
+  "requested_at": "2026-09-10T21:07:11.674569+00:00",
+  "action_scope": "METRICOOL_SCHEDULE",
+  "target_platform": "linkedin",
+  "proposed_schedule_time": "2026-09-12T21:07:11.674375+00:00",
+  "canonical_payload_sha256": "e4593a7bedc667817b358b0f11355d1c4ff8f7518dad5019d3b76dc888c9f201",
+  "content_summary": "Fixing STM32H7 DMA Bus Contention Under 20 FPS Edge Vision",
+  "content_full_text": "While running INT8 MobileNetV2 on an STM32H743ZI at 480 MHz, we hit an unexpected 28ms frame drop.\n\nThe DCMI camera interface and the SPI display driver were competing for the same AXI SRAM bank, stalling the Cortex-M7 core on bus arbitration.\n\nHere is the architectural pattern that resolved it:\n1. Relocated camera DMA rx buffers to SRAM1 (D2 domain).\n2. Kept the model tensor arena in AXI SRAM (D1 domain).\n3. Configured ping-pong double buffering with circular DMA interrupts.\n\nResult: Memory bus contention dropped by 24%, restoring a sustained 20 FPS inference pipeline without frame jitter.\n\nWhen designing high-throughput vision on Cortex-M7, never treat internal RAM as a homogeneous pool. Domain bus matrix boundaries matter.",
+  "media_asset_hashes": [
+    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  ],
+  "scorecard_summary": {
+    "composite_score": 91.0,
+    "slop_detected": false,
+    "grounding_percentage": 100.0
+  }
+}

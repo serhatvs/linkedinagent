@@ -1,0 +1,19 @@
+{
+  "request_id": "appr_req_20260910_210633_03611c",
+  "post_id": "post_usb_display_tiling",
+  "requested_at": "2026-09-10T21:06:33.852832+00:00",
+  "action_scope": "METRICOOL_SCHEDULE",
+  "target_platform": "linkedin",
+  "proposed_schedule_time": "2026-09-11T21:06:33.852809+00:00",
+  "canonical_payload_sha256": "fe79ea492f0d91c3020613088e74c9e735be03e05a737b5cff7f9cc3d31c3e73",
+  "content_summary": "Bypassing Android Decoder Macroblock Limits with Dual-Strip NVENC Tiling",
+  "content_full_text": "The tablet screen is native 2560x1600, but its hardware video decoder flatly refuses any frame that size.\n\nWhile building usb-display (turning an Android tablet into a native Windows extended monitor over USB), we hit a hard silicon boundary: the MediaTek video decoder is hard-capped at 14,400 macroblocks per frame. A 2560x1600 frame requires 16,000. All 14 decoders exposed by the device rejected it at configure() time.\n\nYet the GPU drives the 2560x1600 panel effortlessly. That gap made the workaround possible:\n\n1. Windows host captures the virtual display via Desktop Duplication API.\n2. Frame is split into two 2560x800 horizontal strips (8,000 macroblocks each — safely below the 14,400 ceiling).\n3. Both strips are encoded concurrently using NVIDIA NVENC hardware encoding.\n4. Streamed over TCP through an adb reverse tunnel across the USB cable.\n5. Android app decodes each strip in its own MediaCodec instance directly onto adjacent SurfaceViews.\n\nWhy two strips instead of four? We benchmarked instance scaling:\n- 1 instance @ 2560x800: 49.4 fps (395k macroblocks/s)\n- 2 instances @ 2560x800: 43.2 fps (691k macroblocks/s)\n- 3 instances @ 2560x800: 28.9 fps (per-instance collapse)\n- 4 instances @ 2560x800: 23.0 fps\n\nBecause the display runs at the slowest strip's rate, two strips is the mathematical optimum.\n\nMeasured outcome: 45.3 fps sustained native playback over 146 seconds of 4K video with zero dropped frames. Bitrate averaged 20.0 Mbit/s — roughly 7% of what USB 2.0 carries.\n\nWhen streaming low-latency video to mobile devices, the cable bandwidth is rarely the bottleneck. The fixed-function decoder silicon is.",
+  "media_asset_hashes": [
+    "4a7d3b2e9c1f8a5e0d3b7c2a1e8f9d0c2b4a6e8f1d3c5a7e9b0d2f4a6c8e0a2b"
+  ],
+  "scorecard_summary": {
+    "composite_score": 94.0,
+    "slop_detected": false,
+    "grounding_percentage": 100.0
+  }
+}

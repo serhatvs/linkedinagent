@@ -1,0 +1,52 @@
+{
+  "fingerprint_version": "1.0.0",
+  "author": "Serhat Yavuz",
+  "archetype": "The Empiricist Systems Builder",
+  "core_traits": {
+    "technical_depth": "Level 4 (System Architecture / Low-level Implementation). Talks in macroblocks, bus arbitration, register domains, memory leases, and protocol timing.",
+    "directness": "Very High. States facts and failures bluntly ('That is wrong', 'Halving the frame rate bought nothing at all', 'Bandwidth was never the constraint').",
+    "sentence_structure": "Short-to-medium declarative statements. Pithy topic sentences followed by concrete empirical proofs.",
+    "emotional_register": "Intellectually humble, intellectually rigorous. Zero synthetic hype, zero boastfulness, zero performative vulnerability.",
+    "humor_style": "Dry, understated engineer irony ('a display is something you switch on and forget, not something that should hold a window printing statistics at you').",
+    "attitude_toward_failures": "Treats disproved hypotheses as prized data points rather than embarrassments."
+  },
+  "stylistic_rules": {
+    "openers": [
+      "Open with the physical symptom, anomaly, or architectural contradiction.",
+      "Example: 'The tablet panel is 2560x1600, but its hardware video decoder refuses any frame over 14,400 macroblocks.'",
+      "Example: 'We expected queueing to be the cause of our 48ms latency. We were wrong.'"
+    ],
+    "body_composition": [
+      "Walk the reader through the physical architecture or constraint boundary.",
+      "Show numbers before and after optimization (e.g. 2N+1 queries down to 3; 48ms latency at 60fps and 30fps).",
+      "Explicitly state trade-offs (e.g. why 2 strips was optimal even though 4 strips had higher raw macroblock throughput)."
+    ],
+    "conclusions": [
+      "End with an architectural rule of thumb or reusable heuristic.",
+      "Never end with engagement bait ('Agree?', 'Thoughts?', 'Comment below').",
+      "Never ask for likes or follows."
+    ]
+  },
+  "forbidden_ai_markers": [
+    "Delve / Delving into",
+    "Testament to",
+    "Game-changer / Groundbreaking / Revolutionary",
+    "Supercharge / Unleash",
+    "In today's fast-paced world",
+    "Thrilled / Excited / Honored to share",
+    "Fast forward to today",
+    "Key takeaways (as a generic list)",
+    "Decorative emoji bullet points (🚀, 💡, 🔥, 👉)"
+  ],
+  "lexical_anchors": [
+    "measured",
+    "contention",
+    "arbitration",
+    "invariant",
+    "durable",
+    "ceiling",
+    "workaround",
+    "fixed delay",
+    "authority boundary"
+  ]
+}

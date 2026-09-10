@@ -1,0 +1,20 @@
+{
+  "candidate_id": "cand_usb_01",
+  "idea_id": "idea_usb_display_macroblock_workaround",
+  "pillar": "pillar_low_level_systems_and_graphics",
+  "target_audience": [
+    "Systems Engineers",
+    "Graphics & Video Streaming Developers",
+    "Android OS & MediaCodec Engineers"
+  ],
+  "angle": "Hardware Macroblock Limits & Dual-Strip Tiling Architecture",
+  "mvts_evaluation": {
+    "grounding_score": 3.0,
+    "technical_artifact_score": 3.0,
+    "engineering_tradeoff_score": 2.0,
+    "actionable_takeaway_score": 1.8,
+    "total_score": 9.8
+  },
+  "decision": "PROCEED_TO_DRAFT",
+  "hold_rationale": null
+}

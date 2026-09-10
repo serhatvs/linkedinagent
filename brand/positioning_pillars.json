@@ -1,89 +1,95 @@
 {
+  "portfolio_strategy_version": "2.0.0_recalibrated_from_real_data",
+  "rationale": "Recalibrated from real workspace repos (usb-display, JARVIS, 3dprinter, LeShield, chronos-rag). Replaces speculative generic pillars with Serhat's actual proven engineering strengths: low-level C++/NVENC pipelines, cognitive agent architectures, distributed multi-MCU hardware, and zero-knowledge privacy infrastructure.",
   "pillars": [
     {
-      "id": "pillar_ai_agents",
-      "name": "Autonomous AI Agents & Cognitive Systems",
-      "weight": 0.35,
+      "id": "pillar_low_level_systems_and_graphics",
+      "name": "Low-Level Systems & Graphics Pipelines",
+      "weight": 0.30,
       "core_themes": [
-        "Multi-agent orchestration and failure recovery",
-        "Deterministic guardrails vs probabilistic LLM reasoning",
-        "Tool use benchmarks, evaluation, and latency optimization",
-        "Local LLM deployment and edge intelligence"
+        "Windows Desktop Duplication API and DirectX capture",
+        "Hardware NVENC encoding and MediaCodec tiling workarounds",
+        "Sub-50ms glass-to-glass latency profiling and debunked queueing hypotheses",
+        "USB 2.0 loopback transport over ADB reverse"
       ],
       "target_audiences": [
-        "AI Engineers & Researchers",
-        "Founders of AI startups",
-        "Technical Architects"
+        "Staff Systems Engineers",
+        "Graphics & Streaming Engineers",
+        "C++ / High-Performance Developers"
       ],
-      "required_artifacts": ["Architecture block diagram", "Execution benchmark / latency trace", "Failure recovery log"]
+      "representative_project": "proj_usb_display",
+      "required_artifacts": ["Latency waterfall chart", "Tiled decoding diagram", "NVENC vs Media Foundation benchmark table"]
     },
     {
-      "id": "pillar_embedded_firmware",
-      "name": "Embedded Systems & Low-Level Firmware",
+      "id": "pillar_cognitive_architectures",
+      "name": "Cognitive Operating Systems & Durable Agents",
+      "weight": 0.25,
+      "core_themes": [
+        "5 Sources of Truth: Identity, Experience, Beliefs, Capabilities, Journal",
+        "Durable task leasing, heartbeats, and process crash recovery",
+        "Eliminating N+1 database queries in belief hydration (2N+1 down to 3)",
+        "Deterministic policy kernels and model eligibility filtering"
+      ],
+      "target_audiences": [
+        "AI Systems Architects",
+        "Agent Infrastructure Engineers",
+        "Founders of Autonomous Tooling Startups"
+      ],
+      "representative_project": "proj_jarvis_core",
+      "required_artifacts": ["State transition diagram", "Query optimization diff", "Crash recovery trace"]
+    },
+    {
+      "id": "pillar_distributed_embedded_hardware",
+      "name": "Distributed Multi-MCU Systems & Mechatronics",
       "weight": 0.20,
       "core_themes": [
-        "Bare-metal C/C++ and FreeRTOS concurrency on STM32 / ESP32",
-        "Hardware bus protocol debugging (SPI, I2C, UART, CAN)",
-        "Memory profiling, DMA transfers, and interrupt latency",
-        "Ultra-low-power sleep optimization"
+        "3-MCU distributed architecture: ESP32-S3 motion, ESP32-S3 UI, Arduino Mega aux",
+        "TMC2209 stepper driver control over STEP/DIR/UART",
+        "Deterministic authority: separating semantic UI commands from real-time step generation",
+        "Bus isolation and power management across 24V rails"
       ],
       "target_audiences": [
-        "Embedded Systems Engineers",
-        "Firmware Architects",
-        "IoT Hardware Founders"
+        "Embedded Firmware Engineers",
+        "Hardware Architects",
+        "Robotics / Mechatronics Builders"
       ],
-      "required_artifacts": ["Logic analyzer trace", "Memory map / register dump", "Schematic snippet"]
+      "representative_project": "proj_3dprinter_firmware",
+      "required_artifacts": ["System block diagram", "UART frame schema", "Wiring schematic snippet"]
     },
     {
-      "id": "pillar_robotics_mechatronics",
-      "name": "Robotics & Mechatronics",
+      "id": "pillar_applied_crypto_and_privacy",
+      "name": "Privacy-Preserving Trust & Zero-Knowledge Protocols",
       "weight": 0.15,
       "core_themes": [
-        "Kinematics and actuator control (Field Oriented Control, Stepper)",
-        "Sensor fusion (Extended Kalman Filters, IMU, LiDAR)",
-        "Sim-to-real transfer and physics engine validation",
-        "ROS2 node architecture and deterministic communication"
+        "Client-side Groth16 ZK-proof generation with WebAuthn / passkey PRF",
+        "Predicate DSL for selective credential disclosure without raw PII on-chain",
+        "High-throughput execution design for Monad Metropolis hackathon",
+        "BBS+ and BabyJubjub cryptographic signature verification"
       ],
       "target_audiences": [
-        "Robotics Engineers",
-        "Mechatronics Specialists",
-        "Physical AI Developers"
+        "Zero-Knowledge Protocol Engineers",
+        "Web3 Infrastructure Architects",
+        "Identity & Security Researchers"
       ],
-      "required_artifacts": ["CAD render / physical test clip", "Kinematics calculation / telemetry plot"]
+      "representative_project": "proj_leshield_protocol",
+      "required_artifacts": ["Predicate DSL schema", "Groth16 flow diagram", "Trust boundary map"]
     },
     {
-      "id": "pillar_3d_engineering",
-      "name": "3D Engineering & Rapid Hardware Prototyping",
-      "weight": 0.15,
+      "id": "pillar_local_infra_and_tooling",
+      "name": "Local Developer Tooling & Pragmatic Engineering",
+      "weight": 0.10,
       "core_themes": [
-        "Parametric CAD modeling for functional enclosures",
-        "DFM (Design for Manufacturing) and tolerance analysis",
-        "FDM/SLA 3D printing parameter tuning for structural load",
-        "Thermal management and mechanical stress distribution"
+        "Zero-budget local RAG with deterministic heading-aware Markdown AST chunking",
+        "FAISS local indexing with stable content hashing",
+        "AGU Computer Engineering student builder journey and open-source contributions"
       ],
       "target_audiences": [
-        "Hardware Designers",
-        "Product Engineers",
-        "Mechanical Enthusiasts"
+        "Engineering Students & Builders",
+        "Open-Source Contributors",
+        "Technical Recruiters"
       ],
-      "required_artifacts": ["Cross-section CAD view", "Stress analysis FEA or physical break-test photo"]
-    },
-    {
-      "id": "pillar_software_infrastructure",
-      "name": "Software Engineering & Systems Infrastructure",
-      "weight": 0.15,
-      "core_themes": [
-        "Distributed backend systems and microservices",
-        "Developer CLI tooling and performance profiling",
-        "Reliability engineering and root-cause post-mortems",
-        "Data streaming and state machine implementations"
-      ],
-      "target_audiences": [
-        "Senior Backend Engineers",
-        "Staff Infrastructure Engineers",
-        "Engineering Managers"
-      ],
-      "required_artifacts": ["Code diff", "Flamegraph / benchmark chart", "State machine transition diagram"]
+      "representative_project": "proj_chronos_rag",
+      "required_artifacts": ["Chunking AST comparison", "Local indexing latency table"]
     }
   ],
   "content_scoring_thresholds": {
