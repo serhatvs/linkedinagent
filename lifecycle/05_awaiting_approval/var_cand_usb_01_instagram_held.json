@@ -1,0 +1,69 @@
+{
+  "variant_id": "var_cand_usb_01_instagram",
+  "story_id": "story_cand_usb_01",
+  "candidate_id": "cand_usb_01",
+  "channel_id": "6aa340c6cd8b9c702c487833",
+  "target_platform": "instagram",
+  "lifecycle_state": "AWAITING_APPROVAL",
+  "content_text": "I wanted to turn this tablet into a real second monitor, so I built it.\n\nHere is the desk setup: laptop on the left, primary external display behind it, and an Android tablet running Windows extended desktop natively at 2560x1600 over a single USB cable.\n\nThe catch: the tablet's fixed-function video decoder flatly refused a single 2560x1600 frame (capped at 14,400 macroblocks vs 16,000 needed). But the GPU had no trouble driving the panel.\n\nSo the pipeline splits each frame into two horizontal 2560x800 strips, encodes them concurrently with NVENC, and streams them across an adb tunnel to two MediaCodec instances decoding side-by-side.\n\nAmong the configurations tested, splitting the frame into two encoded regions produced the best full-frame result \u2014 holding 45.3 fps sustained over USB with zero dropped frames, 20.0 Mbit/s average bitrate, and 48 ms median latency.\n\n#buildinpublic #systemsengineering #androiddev #graphics #desksetup #maker #hardware",
+  "media_assets": [
+    {
+      "asset_type": "product_photo",
+      "asset_path": "assets/user_submissions/cand_usb_01_usb_display_lenovo_desktop_photo.jpg",
+      "asset_sha256": "70d99cee2045f62ed6678657639824be020aa408326b66ae8ee1ed48560d9d9d",
+      "caption": "Lenovo TB336FU Android tablet running native 2560x1600 Windows extended display alongside laptop over USB cable.",
+      "source_priority": "EXISTING_PROJECT_ASSET",
+      "archetype": null,
+      "is_synthetic": false,
+      "synthetic_purpose": null,
+      "real_evidence_ref": "Drive File ID: 1LZyRxsQ9m4Zw7kN9oSKI97rPBYTKE9J9 (root POSTASSEST)"
+    }
+  ],
+  "citations": [
+    {
+      "claim_text": "usb-display native 2560x1600 @ 45fps over USB with dual-strip NVENC tiling",
+      "source_type": "project_registry",
+      "reference_id": "proj_usb_display"
+    },
+    {
+      "claim_text": "Windows Desktop Duplication API + NVIDIA NVENC hardware encoding",
+      "source_type": "knowledge_fact",
+      "reference_id": "Windows Desktop Duplication API + NVIDIA NVENC hardware encoding"
+    },
+    {
+      "claim_text": "Android MediaCodec dual-surface tiling over ADB reverse TCP",
+      "source_type": "knowledge_fact",
+      "reference_id": "Android MediaCodec dual-surface tiling over ADB reverse TCP"
+    },
+    {
+      "claim_text": "Record the measured latency, and the hypothesis it disproved (fixed pipeline delay vs queue backlog)",
+      "source_type": "git_commit",
+      "reference_id": "532ac00"
+    }
+  ],
+  "approval_type": null,
+  "approval_token_id": null,
+  "canonical_payload_sha256": "0ba7d073f7fa999fd6d6c4672ab40e4811a241d951956f67e743f235ed909da9",
+  "dispatch_state": "HOLD",
+  "scheduled_publish_time": null,
+  "remote_post_id": null,
+  "dispatch_result": null,
+  "adaptation_notes": "PUBLISH_STATE = HOLD_FOR_NATIVE_MUSIC: Track 'Hard Pill to Swallow \u2014 Blacklite District' requires native Instagram app licensed music workflow.",
+  "created_at": "2026-09-11T13:49:53.678622+00:00",
+  "sub_type": "post",
+  "should_share_to_feed": true,
+  "hashtags": [
+    "#buildinpublic",
+    "#systemsengineering",
+    "#androiddev",
+    "#graphics",
+    "#desksetup",
+    "#maker",
+    "#hardware"
+  ],
+  "is_ai_generated": false,
+  "publish_state": "HOLD_FOR_NATIVE_MUSIC",
+  "music_status": "MUSIC_UNAVAILABLE",
+  "preferred_track": "Hard Pill to Swallow \u2014 Blacklite District",
+  "hold_reason": "Required licensed track unavailable via third-party Buffer API on static photo; pending native mobile audio addition."
+}

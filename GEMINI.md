@@ -16,4 +16,4 @@ To autonomously manage, research, draft, review, and plan the LinkedIn personal 
 - **Rule Root**: `.agents/rules/`
 - **Lifecycle Pipeline**: `lifecycle/`
 - **Approval System**: `approvals/`
-- **MCP Gateways**: Metricool (social & analytics), GitHub (code intelligence)
+- **MCP Gateways**: Buffer (social & analytics), GitHub (code intelligence)

@@ -1,0 +1,694 @@
+{
+  "server_name": "buffer-native-mcp",
+  "endpoint_url": "https://mcp.buffer.com/mcp",
+  "architecture_type": "NATIVE_MCP_SSE_ENDPOINT",
+  "current_status": "BUFFER_AUTHENTICATED",
+  "blocker_code": null,
+  "diagnostic_message": "Buffer native MCP server is fully authenticated and operational via OAuth 2.0 PKCE. All 3 expected channels (LinkedIn Personal Profile, Instagram Professional Account, X Developer Account) are verified and bound.",
+  "authentication": {
+    "status": "AUTHENTICATED",
+    "protocol": "OAuth 2.0 PKCE (RFC 8414)",
+    "authorization_server": "https://auth.buffer.com",
+    "authorization_endpoint": "https://auth.buffer.com/auth",
+    "token_endpoint": "https://auth.buffer.com/token",
+    "scopes_supported": [
+      "posts:read",
+      "posts:write",
+      "ideas:read",
+      "ideas:write",
+      "account:read",
+      "account:write",
+      "insights:read",
+      "engagements:read",
+      "engagements:write"
+    ],
+    "authenticated_user": {
+      "account_id": "6aa34016d415312220f6de39",
+      "email": "serhatyvz38@gmail.com",
+      "timezone": "Europe/Istanbul"
+    }
+  },
+  "buffer_account": {
+    "account_id": "6aa34016d415312220f6de39",
+    "email": "serhatyvz38@gmail.com",
+    "organization_id": "6aa34016d415312220f6de3b",
+    "organization_name": "My organization",
+    "plan": "Free",
+    "plan_limits": {
+      "channels": 3,
+      "members": 0,
+      "scheduledPosts": 10,
+      "tags": 3,
+      "ideas": 100
+    },
+    "timezone": "Europe/Istanbul",
+    "free_plan_insights_limit_days": 31
+  },
+  "channels": {
+    "linkedin": {
+      "channel_id": "6aa34050cd8b9c702c48769e",
+      "network": "linkedin",
+      "service": "linkedin",
+      "display_name": "Serhat Yavuz",
+      "name": "serhat-yavuz-70593b370",
+      "account_type": "profile",
+      "descriptor": "LinkedIn Profile",
+      "verified_target_type": "PERSONAL_PROFILE",
+      "external_link": "https://www.linkedin.com/in/serhat-yavuz-70593b370",
+      "avatar": "https://buffer-channel-avatars-bucket.s3.amazonaws.com/6aa34050cd8b9c702c48769e_1789083729142",
+      "is_disconnected": false,
+      "is_locked": false,
+      "is_queue_paused": false,
+      "editorial_identity": {
+        "role": "Professional engineering reputation",
+        "target_audience": [
+          "Engineers",
+          "Hiring Managers",
+          "Technical Founders",
+          "Researchers"
+        ],
+        "mvts_threshold": 9.0,
+        "tone_profile": "Rigorous, credible, restrained, architectural, measured, evidence-grounded",
+        "content_types": [
+          "important project milestones",
+          "deep architecture breakdowns",
+          "measured technical results & benchmarks",
+          "system launches",
+          "hackathon & system retrospects"
+        ]
+      },
+      "capabilities": {
+        "write": true,
+        "scheduling_types": [
+          "automatic",
+          "notification"
+        ],
+        "modes": [
+          "addToQueue",
+          "shareNow",
+          "shareNext",
+          "customScheduled"
+        ],
+        "media_support": [
+          "image (JPEG/PNG)",
+          "video (MP4)",
+          "document (PDF with title & thumbnail)"
+        ],
+        "character_limit": 3000,
+        "queue_limit_free_plan": 10,
+        "analytics": {
+          "supported": true,
+          "tool": "get_aggregated_post_metrics",
+          "window_limit_days": 31,
+          "metrics": [
+            "postCount",
+            "reactions",
+            "comments",
+            "engagementRate",
+            "impressions",
+            "shares",
+            "reach",
+            "views",
+            "totalTimeWatched",
+            "viewers"
+          ]
+        }
+      }
+    },
+    "instagram": {
+      "channel_id": "6aa340c6cd8b9c702c487833",
+      "network": "instagram",
+      "service": "instagram",
+      "display_name": "serhatyvz_38",
+      "name": "serhatyvz_38",
+      "account_type": "business",
+      "descriptor": "Instagram Professional Account",
+      "verified_target_type": "PROFESSIONAL_BUSINESS_ACCOUNT",
+      "external_link": "https://instagram.com/serhatyvz_38",
+      "avatar": "https://buffer-channel-avatars-bucket.s3.amazonaws.com/6aa340c6cd8b9c702c487833_1789083847334",
+      "is_disconnected": false,
+      "is_locked": false,
+      "is_queue_paused": false,
+      "default_to_reminders": false,
+      "direct_publishing_supported": true,
+      "editorial_identity": {
+        "role": "Visual creative / build journal",
+        "target_audience": [
+          "Builders",
+          "Hardware Hackers",
+          "Designers",
+          "Tech Creators"
+        ],
+        "mvts_threshold": 7.5,
+        "tone_profile": "Visual, creative, build-in-public, workbench, behind-the-scenes, concise caption",
+        "content_types": [
+          "hardware lab workbench",
+          "3D printing timelapse & CAD renders",
+          "workbench photos & PCB teardowns",
+          "visual milestone artifacts",
+          "behind-the-scenes build logs"
+        ]
+      },
+      "capabilities": {
+        "write": true,
+        "scheduling_types": [
+          "automatic",
+          "notification"
+        ],
+        "modes": [
+          "addToQueue",
+          "customScheduled"
+        ],
+        "media_support": [
+          "image (JPEG mandatory if not video)",
+          "video (MP4 mandatory if not image)"
+        ],
+        "requires_media": true,
+        "sub_types": [
+          "post",
+          "reel",
+          "story"
+        ],
+        "character_limit": 2200,
+        "queue_limit_free_plan": 10,
+        "analytics": {
+          "supported": true,
+          "tool": "get_aggregated_post_metrics",
+          "window_limit_days": 31,
+          "metrics": [
+            "postCount",
+            "reactions",
+            "comments",
+            "engagementRate",
+            "views",
+            "shares",
+            "saves",
+            "follows",
+            "reach",
+            "totalTimeWatched",
+            "averageTimeWatched"
+          ]
+        }
+      }
+    },
+    "twitter": {
+      "channel_id": "6aa340e1cd8b9c702c487894",
+      "network": "twitter",
+      "service": "twitter",
+      "display_name": "Arkhino_DEV",
+      "name": "Arkhino_DEV",
+      "account_type": "profile",
+      "descriptor": "X Free Profile",
+      "verified_target_type": "DEVELOPER_PROFILE",
+      "external_link": "https://twitter.com/Arkhino_DEV",
+      "avatar": "https://pbs.twimg.com/profile_images/2028710767726297088/y8IEH6We_normal.jpg",
+      "is_disconnected": false,
+      "is_locked": false,
+      "is_queue_paused": false,
+      "editorial_identity": {
+        "role": "Developer feed",
+        "target_audience": [
+          "Developers",
+          "Open Source Contributors",
+          "Tech Twitter",
+          "AI Practitioners"
+        ],
+        "mvts_threshold": 6.5,
+        "tone_profile": "Direct, concise, developer-native, punchy, zero corporate fluff, fast insight",
+        "content_types": [
+          "fast technical updates",
+          "micro-learnings & gotchas",
+          "tool & library discovery",
+          "real-time debugging insights",
+          "direct technical opinions"
+        ]
+      },
+      "capabilities": {
+        "write": true,
+        "scheduling_types": [
+          "automatic",
+          "notification"
+        ],
+        "modes": [
+          "addToQueue",
+          "customScheduled"
+        ],
+        "media_support": [
+          "optional image (JPEG/PNG)",
+          "optional video (MP4)",
+          "animated GIF"
+        ],
+        "requires_media": false,
+        "thread_support": true,
+        "character_limit": 280,
+        "queue_limit_free_plan": 10,
+        "analytics": {
+          "supported": true,
+          "tool": "get_aggregated_post_metrics",
+          "window_limit_days": 31,
+          "metrics": [
+            "postCount",
+            "reactions",
+            "comments",
+            "engagementRate",
+            "reposts",
+            "impressions",
+            "clicks"
+          ]
+        }
+      }
+    }
+  },
+  "detected_native_mcp_tools": [
+    {
+      "name": "create_idea",
+      "description": "Create a new content idea in a Buffer organization. Ideas are drafts for future social media posts \u2014 use them to capture concepts, attach media, and tag with categories. Call get_account first to obtain your organization ID. Returns the created idea record. Do not use this tool to publish or schedule posts.",
+      "operation_type": "WRITE",
+      "required_parameters": [
+        "organizationId",
+        "content"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "content": "object",
+          "organizationId": "string"
+        },
+        "required": [
+          "organizationId",
+          "content"
+        ]
+      },
+      "output_schema": "JSON object / GraphQL response structure"
+    },
+    {
+      "name": "create_post",
+      "description": "Create and schedule a social media post to a Buffer channel. Supports all platforms: Instagram, Facebook, Twitter, LinkedIn, Pinterest, YouTube, Google Business, Mastodon, TikTok, Threads, Bluesky, and Start Page. Before calling create_post, call get_account to choose an organization, then call list_channels for that organization and use an exact returned channel ID. \n\nMinimum requirements by service:\n- Twitter/Mastodon/Threads/Bluesky: text only\n- Instagram/TikTok: requires image or video asset\n- Pinterest: requires image + metadata.pinterest.boardServiceId (get from get_channel)\n- YouTube: requires video + metadata.youtube.title + metadata.youtube.categoryId\n\n\nFor threaded posts, set BOTH outer text and metadata.{platform}.thread, include ALL thread items, match outer text to the first item's text, and use the top-level asset shape for thread assets. To give a Threads or Bluesky thread item a link preview card, set metadata.{platform}.linkAttachment on that item.\n\nReturns the created post with id, status, and scheduling details.",
+      "operation_type": "WRITE",
+      "required_parameters": [
+        "channelId",
+        "schedulingType"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "assets": "array",
+          "channelId": "string",
+          "draftId": "string",
+          "dueAt": "string",
+          "ideaId": "string",
+          "metadata": "object",
+          "mode": "string",
+          "saveToDraft": "boolean",
+          "schedulingType": "string",
+          "tagIds": "array",
+          "text": "string"
+        },
+        "required": [
+          "channelId",
+          "schedulingType"
+        ]
+      },
+      "output_schema": "JSON object / GraphQL response structure"
+    },
+    {
+      "name": "create_post_template",
+      "description": "Create a reusable post template in a Buffer organization. Templates capture content starting points whose body may contain {{placeholders}}. Set visibility to private (only you) or internal (shared with the organization). Call get_account first to obtain your organization ID. Returns the created template. This does not schedule or publish a post.",
+      "operation_type": "WRITE",
+      "required_parameters": [
+        "organizationId",
+        "title",
+        "body",
+        "description"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "body": "string",
+          "description": "string",
+          "emoji": "string",
+          "organizationId": "string",
+          "title": "string",
+          "visibility": "string"
+        },
+        "required": [
+          "organizationId",
+          "title",
+          "body",
+          "description"
+        ]
+      },
+      "output_schema": "JSON object / GraphQL response structure"
+    },
+    {
+      "name": "delete_post",
+      "description": "Permanently delete a post from Buffer. This action is irreversible. Not all posts can be deleted. Check that deletePost is in the allowedActions array (returned by list_posts and get_post) before attempting deletion. Use list_posts or get_post to find the post ID before deleting.",
+      "operation_type": "WRITE",
+      "required_parameters": [
+        "postId"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "postId": "string"
+        },
+        "required": [
+          "postId"
+        ]
+      },
+      "output_schema": "JSON object / GraphQL response structure"
+    },
+    {
+      "name": "delete_post_template",
+      "description": "Permanently delete a post template from Buffer. This action is irreversible. You can delete templates you own, or internal templates in your organization if you are an org admin/owner. Use list_post_templates or get_post_template to find the template ID before deleting.",
+      "operation_type": "WRITE",
+      "required_parameters": [
+        "postTemplateId"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "postTemplateId": "string"
+        },
+        "required": [
+          "postTemplateId"
+        ]
+      },
+      "output_schema": "JSON object / GraphQL response structure"
+    },
+    {
+      "name": "edit_post",
+      "description": "Edit an existing post in Buffer. Before calling edit_post, call get_post with the target post ID to retrieve the current text, assets, metadata, and allowedActions. Verify that updatePost is in allowedActions before proceeding. Leave schedulingType out unless the user is switching between reminder and automatic publishing: omitting it keeps the post publishing the way it already does. Leave mode and dueAt out unless the user is rescheduling: omitting them keeps the post in its current queue slot or custom time. Sending a mode reschedules the post even when it matches the current one.\n\nEvery edit is re-validated as a whole post against the same rules as creation; it is not merged with the stored post. Carry the current assets and metadata forward from get_post and change only what the user asked to change. Dropping an asset or metadata field the post requires will reject the edit.\n\nFor threaded posts, set BOTH outer text and metadata.{platform}.thread, include ALL thread items, match outer text to the first item's text, and use the top-level asset shape for thread assets. To give a Threads or Bluesky thread item a link preview card, set metadata.{platform}.linkAttachment on that item.\n\nReturns the updated post with id, status, assets, and scheduling details.",
+      "operation_type": "WRITE",
+      "required_parameters": [
+        "postId"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "assets": "array",
+          "draftId": "string",
+          "dueAt": "string",
+          "ideaId": "string",
+          "metadata": "object",
+          "mode": "string",
+          "postId": "string",
+          "saveToDraft": "boolean",
+          "schedulingType": "string",
+          "tagIds": "array",
+          "text": "string"
+        },
+        "required": [
+          "postId"
+        ]
+      },
+      "output_schema": "JSON object / GraphQL response structure"
+    },
+    {
+      "name": "execute_mutation",
+      "description": "Executes a GraphQL mutation to modify data in Buffer. PREREQUISITE: Call introspect_schema first to learn available mutations and fields. Use this only for operations not covered by domain tools. Do not guess mutation or field names \u2014 use only names from the schema.",
+      "operation_type": "WRITE",
+      "required_parameters": [
+        "summary",
+        "mutation"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "mutation": "string",
+          "operationName": "string",
+          "summary": "string",
+          "variables": "object"
+        },
+        "required": [
+          "summary",
+          "mutation"
+        ]
+      },
+      "output_schema": "JSON object / GraphQL response structure"
+    },
+    {
+      "name": "execute_query",
+      "description": "Executes a read-only GraphQL query to fetch data from Buffer. PREREQUISITE: Call introspect_schema first to learn available queries and fields. Use this only for operations not covered by domain tools. Do not guess query or field names \u2014 use only names from the schema.",
+      "operation_type": "READ",
+      "required_parameters": [
+        "summary",
+        "query"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "operationName": "string",
+          "query": "string",
+          "summary": "string",
+          "variables": "object"
+        },
+        "required": [
+          "summary",
+          "query"
+        ]
+      },
+      "output_schema": "JSON object / GraphQL response structure"
+    },
+    {
+      "name": "get_account",
+      "description": "Retrieves the authenticated user account and organization details. Call this FIRST in any workflow to obtain your organization ID, which is required by most other tools. Returns account info (email, name, timezone), currentTime (the current time in the account timezone, with UTC offset), and organizations (id, name, plan limits, member count). If the user has multiple organizations, list them by name and confirm which one to use before proceeding with other operations.",
+      "operation_type": "READ",
+      "required_parameters": [],
+      "input_schema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "output_schema": "JSON object / GraphQL response structure"
+    },
+    {
+      "name": "get_aggregated_post_metrics",
+      "description": "Returns aggregate post analytics (sums and averages) for a Buffer organization over a date range. Use this when the user wants totals across many posts \u2014 e.g. \"total reach last month\", \"how did my LinkedIn posts perform in Q1\", \"engagement on posts tagged #launch\". The response always includes a baseline trio of metrics (postCount, reactions, comments); additional metrics (reach, impressions, engagement rate, etc.) are included only when every channel in the filter set supports them. The `metricsUpdatedAt` field carries the freshness of the aggregate \u2014 metrics refresh daily, so values can lag the source network by up to ~24h. It is null when no posts matched the filter. For per-post analytics on a single post, use get_post; for many posts, use list_posts. Call get_account first to obtain your organization ID; use list_channels to discover channel IDs.",
+      "operation_type": "READ",
+      "required_parameters": [
+        "organizationId",
+        "startDateTime",
+        "endDateTime"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "channelIds": "any",
+          "endDateTime": "string",
+          "organizationId": "string",
+          "startDateTime": "string",
+          "tags": "object"
+        },
+        "required": [
+          "organizationId",
+          "startDateTime",
+          "endDateTime"
+        ]
+      },
+      "output_schema": "JSON object / GraphQL response structure"
+    },
+    {
+      "name": "get_channel",
+      "description": "Retrieves detailed information for a specific social media channel. Returns posting schedule, posting goals, queue status, timezone, link shortening config, and service-specific metadata (e.g., Pinterest boards, Mastodon server URL, Instagram reminder settings). Use list_channels first to discover available channel IDs.",
+      "operation_type": "READ",
+      "required_parameters": [
+        "channelId"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "channelId": "string"
+        },
+        "required": [
+          "channelId"
+        ]
+      },
+      "output_schema": "JSON object / GraphQL response structure"
+    },
+    {
+      "name": "get_post",
+      "description": "Retrieves detailed information about a specific post by ID. Returns comprehensive post data including status, content, author, channel references, tags, notes, assets (images, videos, documents), and allowed actions. The metadata field contains service-specific data (e.g., Instagram geolocation, Twitter threads, YouTube privacy settings, Pinterest boards). Posts with status \"error\" include an error field with the failure message. Set `includeMetrics: true` to additionally return per-post analytics (reactions, comments, impressions, etc.) and a `metricsUpdatedAt` freshness timestamp. Only set true when the user asks about post performance. Use list_posts to discover post IDs.",
+      "operation_type": "READ",
+      "required_parameters": [
+        "postId"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "includeMetrics": "boolean",
+          "postId": "string"
+        },
+        "required": [
+          "postId"
+        ]
+      },
+      "output_schema": "JSON object / GraphQL response structure"
+    },
+    {
+      "name": "get_post_template",
+      "description": "Retrieves a single post template by ID. Returns the template body (which may contain {{placeholders}}), title, description, emoji, visibility, organizationId, and timestamps. Returns null if no template exists with the given ID. Use list_post_templates to discover template IDs.",
+      "operation_type": "READ",
+      "required_parameters": [
+        "postTemplateId"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "postTemplateId": "string"
+        },
+        "required": [
+          "postTemplateId"
+        ]
+      },
+      "output_schema": "JSON object / GraphQL response structure"
+    },
+    {
+      "name": "introspect_schema",
+      "description": "Returns the complete GraphQL schema for Buffer API including all queries, mutations, types, and arguments. Call this ONLY when you need to use execute_query or execute_mutation for operations not covered by domain-specific tools. Do not call this for common operations \u2014 use the domain tools instead.",
+      "operation_type": "READ",
+      "required_parameters": [],
+      "input_schema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "output_schema": "JSON object / GraphQL response structure"
+    },
+    {
+      "name": "list_channels",
+      "description": "Lists all social media channels connected to a Buffer organization. Returns summary info (id, name, displayName, service, type, avatar, connection status). Use get_channel for detailed information about a specific channel, including posting schedule. Call get_account first to obtain your organization ID.",
+      "operation_type": "READ",
+      "required_parameters": [
+        "organizationId"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "organizationId": "string"
+        },
+        "required": [
+          "organizationId"
+        ]
+      },
+      "output_schema": "JSON object / GraphQL response structure"
+    },
+    {
+      "name": "list_idea_groups",
+      "description": "Lists all idea groups (columns) in the ideas board for a Buffer organization. Idea groups are used to organize ideas into named columns. Returns each group's id, name, and lock status. Call get_account first to obtain your organization ID.",
+      "operation_type": "READ",
+      "required_parameters": [
+        "organizationId"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "organizationId": "string"
+        },
+        "required": [
+          "organizationId"
+        ]
+      },
+      "output_schema": "JSON object / GraphQL response structure"
+    },
+    {
+      "name": "list_ideas",
+      "description": "Lists content ideas from a Buffer organization, optionally filtered by tags. Ideas are drafts that capture concepts for future social media posts. Returns idea details including id, content (title, text, media, tags, target services, date), group, and timestamps. Supports pagination using Relay-style cursors. Call get_account first to obtain your organization ID. Use create_idea to capture a new idea.",
+      "operation_type": "READ",
+      "required_parameters": [
+        "organizationId"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "after": "string",
+          "first": "integer",
+          "includeUntagged": "boolean",
+          "organizationId": "string",
+          "tagIds": "array"
+        },
+        "required": [
+          "organizationId"
+        ]
+      },
+      "output_schema": "JSON object / GraphQL response structure"
+    },
+    {
+      "name": "list_post_templates",
+      "description": "Lists post templates available to the caller for a Buffer organization. Post templates are reusable content starting points whose body may contain {{placeholders}}. Returns public (Buffer-curated) templates, internal templates shared within the organization, and private templates you own, with fields (id, title, body, description, emoji, visibility, organizationId, timestamps) plus a totalCount. Supports Relay-style cursor pagination. Call get_account first to obtain your organization ID. Use get_post_template for a single template, or create_post_template to add one.",
+      "operation_type": "READ",
+      "required_parameters": [
+        "organizationId"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "after": "string",
+          "first": "integer",
+          "organizationId": "string",
+          "visibility": "string"
+        },
+        "required": [
+          "organizationId"
+        ]
+      },
+      "output_schema": "JSON object / GraphQL response structure"
+    },
+    {
+      "name": "list_posts",
+      "description": "Lists posts from a Buffer organization with filters for channels, status, tags, and dates. Returns post details including id, status, via, text, scheduled/sent times, channel info, tags, assets, and errors. Supports pagination using Relay-style cursors. Set `includeMetrics: true` to additionally return per-post analytics on each post \u2014 only do so when the user asks about post performance, as it materially increases response size. For totals/sums across many posts, prefer `get_aggregated_post_metrics`. Call get_account first to obtain your organization ID, and list_channels to discover channel IDs.",
+      "operation_type": "READ",
+      "required_parameters": [
+        "organizationId"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "after": "string",
+          "channelIds": "array",
+          "createdAt": "object",
+          "dueAt": "object",
+          "first": "integer",
+          "includeMetrics": "boolean",
+          "organizationId": "string",
+          "sort": "array",
+          "status": "array",
+          "tagIds": "array"
+        },
+        "required": [
+          "organizationId"
+        ]
+      },
+      "output_schema": "JSON object / GraphQL response structure"
+    },
+    {
+      "name": "update_post_template",
+      "description": "Update an existing post template in Buffer. Only the fields you provide are changed; omit a field to leave it unchanged. You can edit templates you own, or internal templates in your organization if you are an org admin/owner. Use get_post_template to inspect the current values first. Returns the updated template.",
+      "operation_type": "WRITE",
+      "required_parameters": [
+        "postTemplateId"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "body": "string",
+          "description": "string",
+          "emoji": "string",
+          "postTemplateId": "string",
+          "title": "string",
+          "visibility": "string"
+        },
+        "required": [
+          "postTemplateId"
+        ]
+      },
+      "output_schema": "JSON object / GraphQL response structure"
+    }
+  ],
+  "publishing_workflow_analysis": {
+    "primary_publishing_tool": "create_post",
+    "scheduling_mechanism": "mode: customScheduled with dueAt (ISO 8601 with timezone offset, e.g., +03:00)",
+    "queue_capacity_free_plan": "10 posts total across queue",
+    "free_plan_insights_restriction": "Historical metrics query capped to maximum 31 days window"
+  }
+}

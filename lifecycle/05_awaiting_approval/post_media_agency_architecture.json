@@ -1,0 +1,48 @@
+{
+  "post_id": "post_media_agency_architecture",
+  "state_version": 1,
+  "lifecycle_state": "AWAITING_APPROVAL",
+  "pillar": "pillar_software_infrastructure",
+  "author": "Serhat",
+  "title": "Building an Autonomous Personal Media Agency: Zero-Slop Architecture with HMAC-SHA256 Human-in-the-Loop Gates",
+  "content_text": "Most AI social media tools are built to maximize volume: scraping feeds, generating shallow summaries, and spamming corporate buzzwords with generic rocket emojis.\n\nWhen you're building across systems programming, low-level graphics, robotics, and embedded hardware, posting ungrounded AI content destroys technical credibility immediately.\n\nTo solve this, I built an Autonomous Personal Media Agency with one core Prime Directive: Credibility Over Frequency. The agency is strictly empowered to choose NO-OP (publish nothing) whenever there is no sufficiently novel, grounded engineering progress to communicate.\n\nHere is the architectural foundation that enforces that:\n\n1. Zero Autonomous External Writes:\nThe agency can autonomously mine git diffs, inspect lab benchmarks, draft write-ups, and evaluate scorecards. But it cannot dispatch without a valid human approval token signed by me. Every dispatch verifies the canonical payload hash against an HMAC-SHA256 authenticated approval receipt in approvals/signed/.\n\n2. Deterministic Design Rule Checks (DRC):\nBefore any technical post reaches review, it passes automated domain Design Rule Checks:\n- Hardware Safety: Verifies required mains isolation and protection constraints, plus BMS protection for LiPo battery setups.\n- Electrical Integrity: Flags direct interfacing between 5V logic and 3.3V microcontrollers without level shifting.\n- Grounding: 100% of claims must resolve to registered project records, lab hardware specs, or verified git commit SHAs.\n\n3. 9-Stage Persistent State Machine:\nContent flows through a persistent, strictly validated lifecycle: IDEA -> CANDIDATE -> DRAFT -> REVIEWED -> AWAITING_APPROVAL -> APPROVED -> SCHEDULED -> PUBLISHED -> ANALYZED. Skipping stages is programmatically forbidden.\n\n4. Evidence-First Visual Pipeline:\nText-only posts are prohibited across all channels. Every release requires verified technical assets—schematics, hardware workbench photos, or architecture traces—ingested via an authenticated Google Drive browser strictly sandboxed to an isolated root folder.\n\nWhen designing autonomous agent workflows, autonomous read and planning should be paired with zero-trust external execution. High-assurance agents need deterministic validation firewalls and HMAC-SHA256 authenticated human approval gates.",
+  "media_assets": [
+    {
+      "asset_type": "screenshot",
+      "asset_path": "assets/user_submissions/cand_agency_01_agency_workstation_overview.png",
+      "asset_sha256": "19f60372c62c6f4b4895f5834b4c208c31079c1ee9df742821c042720986d652",
+      "caption": "Operator Workstation interface: persistent strictly validated lifecycle, live audit log, safety killswitches, and multichannel gating.",
+      "source_priority": "EXISTING_PROJECT_ASSET",
+      "archetype": null,
+      "is_synthetic": false,
+      "synthetic_purpose": null,
+      "real_evidence_ref": "Workspace screenshot: overview.png (SHA-256: 19f60372...)"
+    }
+  ],
+  "citations": [
+    {
+      "claim_text": "Autonomous Personal Media Agency: persistent, strictly validated 9-stage lifecycle, HMAC-SHA256 authenticated human approval gates, and multi-channel Buffer publishing.",
+      "source_type": "project_registry",
+      "reference_id": "proj_media_agency"
+    },
+    {
+      "claim_text": "Engineered an Autonomous Personal Media Agency: persistent, strictly validated 9-stage lifecycle, HMAC-SHA256 authenticated approval gating, zero-slop Design Rule Checks, and multi-channel Buffer MCP publishing.",
+      "source_type": "knowledge_fact",
+      "reference_id": "Engineered an Autonomous Personal Media Agency: persistent, strictly validated 9-stage lifecycle, HMAC-SHA256 authenticated approval gating, zero-slop Design Rule Checks, and multi-channel Buffer MCP publishing."
+    },
+    {
+      "claim_text": "v1.0: Autonomous Personal Media Agency - full workspace implementation and Phase 2 project intelligence",
+      "source_type": "git_commit",
+      "reference_id": "56e7469"
+    }
+  ],
+  "scorecard_id": "eval_3e20fb9e2e65",
+  "approval_request_id": "appr_req_20260912_103302_b1f936",
+  "scheduled_publish_time": null,
+  "metricool_post_id": null,
+  "buffer_post_id": null,
+  "remote_post_id": null,
+  "linkedin_url": null,
+  "created_at": "2026-09-12T10:33:02.447907+00:00",
+  "updated_at": "2026-09-12T10:33:02.447914+00:00"
+}

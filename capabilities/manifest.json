@@ -1,25 +1,43 @@
 {
-  "manifest_version": "1.0.0",
-  "generated_at": "2026-09-11T00:04:00Z",
-  "environment": "Windows PowerShell (x64) / Python 3.13.15",
+  "manifest_version": "1.2.0",
+  "updated_at": "2026-09-11T02:50:00Z",
+  "phase_status": "BUFFER_AUTHENTICATED",
   "gateways": {
+    "buffer": {
+      "manifest_path": "capabilities/buffer.json",
+      "status": "AUTHENTICATED",
+      "account": "serhatyvz38@gmail.com",
+      "organization_id": "6aa34016d415312220f6de3b",
+      "channels_connected": 3,
+      "bound_channels": {
+        "linkedin": "6aa34050cd8b9c702c48769e",
+        "instagram": "6aa340c6cd8b9c702c487833",
+        "twitter": "6aa340e1cd8b9c702c487894"
+      },
+      "can_read_analytics": true,
+      "can_write": true,
+      "gated_by_approval_engine": true
+    },
     "github": {
       "manifest_path": "capabilities/github.json",
-      "status": "DEGRADED_FALLBACK_ACTIVE",
-      "primary_mode": "local_disk_git_plus_unauthenticated_rest",
-      "can_read_code": true,
-      "can_write": false
-    },
-    "metricool": {
-      "manifest_path": "capabilities/metricool.json",
-      "status": "OFFLINE_SIMULATION_ONLY",
-      "primary_mode": "dry_run_with_approval_gate",
-      "can_read_analytics": false,
+      "status": "AUTHENTICATED_KEYRING_ACTIVE",
+      "account": "serhatvs",
+      "primary_mode": "gh_cli_keyring_oauth_plus_local_disk",
+      "can_read_public": true,
+      "can_read_private": true,
       "can_write": false
     }
   },
+  "phase_definitions": {
+    "STATIC_READY": "Architecture and mock schemas internally validated.",
+    "LIVE_READ_READY": "Real project intelligence active and authenticated via GitHub keyring.",
+    "BUFFER_AUTHENTICATED": "Buffer native MCP authenticated via OAuth 2.0 PKCE; LinkedIn Personal Profile, Instagram Professional, and X Developer account discovered and bound.",
+    "MULTICHANNEL_AUTONOMY_READY": "Cross-platform distribution adapter active, multi-variant models enforced, canary payloads validated with zero network side effects.",
+    "LIVE_OPERATIONAL": "End-to-end operational with verified analytics feedback loop and human sign-off."
+  },
   "operational_rules": {
-    "fabrication_policy": "STRICT_ZERO_TOLERANCE. If analytics or private commits are inaccessible, mark as UNAVAILABLE. Never invent numbers or fake profile engagement.",
-    "publishing_policy": "NO_WRITE_ALLOWED. Even in dry-run, publishing is simulated locally."
+    "fabrication_policy": "STRICT_ZERO_TOLERANCE. Zero hallucinated metrics.",
+    "cross_platform_rule": "NEVER blindly cross-post identical text across channels.",
+    "publishing_policy": "NO_WRITE_ALLOWED without validated signed approval receipt."
   }
 }

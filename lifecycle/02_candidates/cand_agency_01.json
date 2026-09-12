@@ -1,0 +1,27 @@
+{
+  "candidate_id": "cand_agency_01",
+  "idea_id": "idea_media_agency_architecture",
+  "pillar": "pillar_software_infrastructure",
+  "target_audience": [
+    "Systems Engineers",
+    "AI Agent Architects",
+    "Technical Founders"
+  ],
+  "angle": "HMAC-SHA256 Authenticated Safety & Evidence-First Technical Brand Engineering",
+  "mvts_evaluation": {
+    "grounding_score": 3.0,
+    "technical_artifact_score": 3.0,
+    "engineering_tradeoff_score": 2.0,
+    "actionable_takeaway_score": 2.0,
+    "total_score": 10.0
+  },
+  "decision": "PROCEED_TO_DRAFT",
+  "hold_rationale": null,
+  "parent_candidate_id": null,
+  "revival_reason": null,
+  "revived_by": null,
+  "revived_at": null,
+  "override_reason": null,
+  "overridden_by": null,
+  "overridden_at": null
+}

@@ -1,7 +1,7 @@
 ---
 name: analytics-learning
 description: >-
-  Ingests post metrics from Metricool MCP, evaluates technical resonance over vanity metrics, generates analytical reports, and updates persistent learning memory.
+  Ingests post metrics from Buffer MCP, evaluates technical resonance over vanity metrics, generates analytical reports, and updates persistent learning memory.
 ---
 
 # Analytics & Learning Skill: Empirical Feedback Loop
@@ -24,7 +24,7 @@ The **Analytics & Learning** skill closes the loop of the agency. By rigorously 
 ## Analytical Cadence
 
 1. **Snapshot Ingestion (T+48h & T+7d)**:
-   - Ingest post metrics via Metricool MCP: `get_post_analytics(post_id)`.
+   - Ingest post metrics via Buffer MCP: `get_aggregated_post_metrics(post_id)`.
    - Store raw snapshot in `analytics/snapshots/<post_id>_<timestamp>.json`.
 
 2. **Quality Metric Calculation**:

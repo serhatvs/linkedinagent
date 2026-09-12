@@ -1,0 +1,10 @@
+{
+  "enabled": true,
+  "drive_type": "google_drive",
+  "folder_id": "",
+  "folder_url": "",
+  "local_sync_path": "",
+  "auto_sync_on_morning_run": true,
+  "last_sync_at": null,
+  "synced_items": []
+}

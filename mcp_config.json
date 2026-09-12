@@ -1,22 +1,13 @@
 {
   "mcpServers": {
-    "github-mcp": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
-      },
-      "description": "Primary project intelligence source. Read-only access to Serhat's repositories, commit trees, pull requests, issues, and code diffs."
-    },
     "metricool-mcp": {
-      "command": "python",
-      "args": ["-m", "core.mcp_gateways", "--server", "metricool"],
-      "env": {
-        "METRICOOL_USER_TOKEN": "${METRICOOL_USER_TOKEN}",
-        "METRICOOL_BLOG_ID": "${METRICOOL_BLOG_ID}",
-        "AGENCY_APPROVAL_GATE_ENFORCED": "true"
-      },
-      "description": "Metricool social publishing and analytics gateway. Enforces deterministic cryptographic approval token checks before allowing schedule/publish operations."
+      "serverUrl": "https://ai.metricool.com/mcp",
+      "description": "Official Metricool Native MCP Server (OAuth 2.0 SSE endpoint at https://ai.metricool.com/mcp). Provides social publishing, scheduling, and multi-network analytics without requiring paid REST API keys."
+    },
+    "github-mcp": {
+      "command": "gh",
+      "args": ["api"],
+      "description": "Native GitHub CLI keyring integration authenticated as 'serhatvs' with scopes 'repo', 'read:org', 'workflow', 'gist'. Allows read access to both public and private repositories without manual PAT storage."
     }
   }
 }

@@ -1,0 +1,53 @@
+{
+  "post_id": "post_usb_display_tiling",
+  "state_version": 5,
+  "lifecycle_state": "APPROVED",
+  "pillar": "pillar_software_infrastructure",
+  "author": "Serhat",
+  "title": "Turning an Android tablet into a 2560x1600 Windows extended monitor over USB",
+  "content_text": "Turning an Android tablet into a native-resolution Windows extended monitor over an ordinary USB cable looks like a bandwidth problem from the outside. In practice, bandwidth wasn't the ceiling. The mobile video decoder was.\n\nWhile building usb-display, the goal was straightforward: extend the Windows desktop onto a Lenovo tablet at its native 2560x1600 resolution, not as a laggy screen mirror, but as an interactive display with mouse input.\n\nThe architecture hit a decisive hardware constraint early on:\nThe tablet's panel is 2560x1600, but its fixed-function video decoder is capped at 14,400 macroblocks per frame. A native 2560x1600 frame requires 16,000 macroblocks. Every single one of the 14 hardware and software decoders exposed by the device rejected the full frame at configure() time.\n\nHowever, the tablet GPU drives the 2560x1600 display without trouble. That separation between display rendering and video decode made the workaround possible:\n\n1. Host Capture: Windows virtual display captured via the Desktop Duplication API.\n2. Tiling: The frame is split horizontally into two 2560x800 strips (8,000 macroblocks each — well within the 14,400 ceiling).\n3. Concurrent Encode: Both strips are encoded concurrently using NVIDIA NVENC.\n4. Transport: Streamed over loopback TCP through an adb reverse tunnel across the USB cable.\n5. Concurrent Decode: An Android service decodes each strip in its own MediaCodec instance directly onto adjacent SurfaceViews.\n\nTo determine the strip count, we benchmarked decoder throughput across concurrent instances:\n- 1 instance @ 2560x800: 49.4 fps\n- 2 instances @ 2560x800: 43.2 fps\n- 3 instances @ 2560x800: 28.9 fps\n- 4 instances @ 2560x800: 23.0 fps\n\nBecause the full picture updates only as fast as the slowest strip, throughput per instance matters more than aggregate block counts. Among the configurations tested, splitting the frame into two encoded regions produced the best full-frame result.\n\nMeasured sustained outcome:\n- 45.3 fps sustained native playback over 146 seconds of 4K video with zero dropped frames.\n- Bitrate averaged 20.0 Mbit/s (peaking at 39 Mbit/s).\n- Median round-trip latency measured at 48 ms (p95: 68 ms).\n- Halving the frame rate target to 30 fps left latency virtually unchanged at 49 ms, confirming fixed pipeline latency rather than a queue backlog.\n\nIn this build, USB 2.0 was not the limiting factor. The mobile decoder was.",
+  "media_assets": [
+    {
+      "asset_type": "product_photo",
+      "asset_path": "assets/user_submissions/cand_usb_01_usb_display_lenovo_desktop_photo.jpg",
+      "asset_sha256": "70d99cee2045f62ed6678657639824be020aa408326b66ae8ee1ed48560d9d9d",
+      "caption": "Lenovo TB336FU Android tablet running native 2560x1600 Windows extended display alongside laptop over USB cable.",
+      "source_priority": "EXISTING_PROJECT_ASSET",
+      "archetype": null,
+      "is_synthetic": false,
+      "synthetic_purpose": null,
+      "real_evidence_ref": "Drive File ID: 1LZyRxsQ9m4Zw7kN9oSKI97rPBYTKE9J9 (root POSTASSEST)"
+    }
+  ],
+  "citations": [
+    {
+      "claim_text": "usb-display native 2560x1600 @ 45fps over USB with dual-strip NVENC tiling",
+      "source_type": "project_registry",
+      "reference_id": "proj_usb_display"
+    },
+    {
+      "claim_text": "Windows Desktop Duplication API + NVIDIA NVENC hardware encoding",
+      "source_type": "knowledge_fact",
+      "reference_id": "Windows Desktop Duplication API + NVIDIA NVENC hardware encoding"
+    },
+    {
+      "claim_text": "Android MediaCodec dual-surface tiling over ADB reverse TCP",
+      "source_type": "knowledge_fact",
+      "reference_id": "Android MediaCodec dual-surface tiling over ADB reverse TCP"
+    },
+    {
+      "claim_text": "Record the measured latency, and the hypothesis it disproved (fixed pipeline delay vs queue backlog)",
+      "source_type": "git_commit",
+      "reference_id": "532ac00"
+    }
+  ],
+  "scorecard_id": null,
+  "approval_request_id": "appr_req_20260911_134953_6e626c",
+  "scheduled_publish_time": null,
+  "metricool_post_id": null,
+  "buffer_post_id": null,
+  "remote_post_id": null,
+  "linkedin_url": null,
+  "created_at": "2026-09-11T00:06:00Z",
+  "updated_at": "2026-09-11T13:49:53.669770+00:00"
+}

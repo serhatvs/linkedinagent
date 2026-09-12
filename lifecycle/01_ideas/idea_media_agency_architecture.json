@@ -1,0 +1,14 @@
+{
+  "idea_id": "idea_media_agency_architecture",
+  "created_at": "2026-09-12T10:33:02.452372+00:00",
+  "source_type": "direct_user_input",
+  "title": "Autonomous Personal Media Agency: Evidence-First Technical Brand Engineering",
+  "raw_notes": "Replacing generic AI posting bots with a persistent, strictly validated 9-stage lifecycle, Design Rule Checks, and HMAC-SHA256 authenticated human approval gates. Grounded in proj_media_agency codebase with 86 passing tests.",
+  "pillar_affinity": "pillar_software_infrastructure",
+  "technical_artifacts_available": [
+    "overview.png",
+    "86 unit and integration tests",
+    "HMAC-SHA256 approval engine"
+  ],
+  "project_id": "proj_media_agency"
+}

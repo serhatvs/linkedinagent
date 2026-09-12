@@ -1,0 +1,19 @@
+{
+  "request_id": "asset_req_20260911_081211_2c05ce",
+  "candidate_id": "cand_usb_display_bench",
+  "target_platforms": [
+    "instagram"
+  ],
+  "requested_asset_title": "Real Asset Request: Product Prototype Photo",
+  "specific_instructions": "Please send a clear photo of the Lenovo tablet connected to your Windows laptop via USB cable while usb-display is actively streaming. Ideally keep both screens visible so the extended-display behavior and zero-tear visual output are obvious.",
+  "why_needed": "This post discusses bypassing the 14,400 macroblock decoder ceiling over USB 2.0. A real dual-screen photo provides decisive physical proof that elevates credibility far beyond diagrams.",
+  "recommended_shots": [
+    "Wide desk shot showing laptop screen and tablet screen running side-by-side",
+    "Close-up on tablet displaying high-resolution text or test pattern over USB"
+  ],
+  "status": "PENDING",
+  "created_at": "2026-09-11T08:12:11.365675+00:00",
+  "fulfilled_asset_path": null,
+  "fulfilled_at": null,
+  "asset_sha256": null
+}

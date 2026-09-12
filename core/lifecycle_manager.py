@@ -17,10 +17,12 @@ VALID_TRANSITIONS: Dict[LifecycleState, List[LifecycleState]] = {
     LifecycleState.IDEA: [LifecycleState.CANDIDATE],
     LifecycleState.CANDIDATE: [LifecycleState.DRAFT],
     LifecycleState.DRAFT: [LifecycleState.REVIEWED, LifecycleState.DRAFT],
-    LifecycleState.REVIEWED: [LifecycleState.AWAITING_APPROVAL, LifecycleState.DRAFT],
+    LifecycleState.REVIEWED: [LifecycleState.AUTO_APPROVED, LifecycleState.AWAITING_APPROVAL, LifecycleState.DRAFT],
     LifecycleState.AWAITING_APPROVAL: [LifecycleState.APPROVED, LifecycleState.DRAFT],
-    LifecycleState.APPROVED: [LifecycleState.SCHEDULED, LifecycleState.DRAFT],
-    LifecycleState.SCHEDULED: [LifecycleState.PUBLISHED, LifecycleState.DRAFT],
+    LifecycleState.APPROVED: [LifecycleState.SCHEDULED, LifecycleState.REVALIDATION_REQUIRED, LifecycleState.DRAFT],
+    LifecycleState.AUTO_APPROVED: [LifecycleState.SCHEDULED, LifecycleState.REVALIDATION_REQUIRED, LifecycleState.DRAFT],
+    LifecycleState.REVALIDATION_REQUIRED: [LifecycleState.REVIEWED, LifecycleState.DRAFT],
+    LifecycleState.SCHEDULED: [LifecycleState.PUBLISHED, LifecycleState.REVALIDATION_REQUIRED, LifecycleState.DRAFT],
     LifecycleState.PUBLISHED: [LifecycleState.ANALYZED],
     LifecycleState.ANALYZED: []
 }
@@ -32,6 +34,8 @@ STAGE_DIR_MAP: Dict[LifecycleState, str] = {
     LifecycleState.REVIEWED: "04_reviewed",
     LifecycleState.AWAITING_APPROVAL: "05_awaiting_approval",
     LifecycleState.APPROVED: "06_approved",
+    LifecycleState.AUTO_APPROVED: "06_approved",
+    LifecycleState.REVALIDATION_REQUIRED: "04_reviewed",
     LifecycleState.SCHEDULED: "07_scheduled",
     LifecycleState.PUBLISHED: "08_published",
     LifecycleState.ANALYZED: "09_analyzed"
@@ -154,7 +158,7 @@ class LifecycleManager:
             raise ValueError(f"Version mismatch: expected {expected_version}, found {existing.state_version}")
 
         # Content-altering change while in a post-review state → demote to DRAFT
-        if existing.lifecycle_state in [LifecycleState.REVIEWED, LifecycleState.AWAITING_APPROVAL, LifecycleState.APPROVED]:
+        if existing.lifecycle_state in [LifecycleState.REVIEWED, LifecycleState.AWAITING_APPROVAL, LifecycleState.APPROVED, LifecycleState.AUTO_APPROVED]:
             old_folder = self.lifecycle_dir / STAGE_DIR_MAP[existing.lifecycle_state]
             old_file = old_folder / f"{post.post_id}.json"
             if old_file.exists():

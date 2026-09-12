@@ -1,0 +1,18 @@
+{
+  "request_id": "asset_req_20260911_081618_0a900b",
+  "candidate_id": "cand_test_ui_upload",
+  "target_platforms": [
+    "instagram"
+  ],
+  "requested_asset_title": "UI Workbench Test Photo",
+  "specific_instructions": "Take a photo for UI test",
+  "why_needed": "Testing UI upload",
+  "recommended_shots": [
+    "Top-down view"
+  ],
+  "status": "FULFILLED",
+  "created_at": "2026-09-11T08:16:18.841338+00:00",
+  "fulfilled_asset_path": "assets\\user_submissions\\cand_test_ui_upload_asset_req_20260911_081618_0a900b_test_shot.png",
+  "fulfilled_at": "2026-09-12T12:46:50.609523+00:00",
+  "asset_sha256": "3a6d7153f9dc1693c72901d0bcadb7ead5a0ca5dcb9458fff6b3beac98a58e39"
+}

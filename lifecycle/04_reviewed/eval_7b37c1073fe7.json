@@ -1,0 +1,36 @@
+{
+  "evaluation_id": "eval_7b37c1073fe7",
+  "post_id": "post_media_agency_architecture",
+  "evaluated_at": "2026-09-12T10:27:03.195521+00:00",
+  "scores": {
+    "technical_rigor": 24.0,
+    "clarity_and_flow": 23.0,
+    "visual_utility": 24.0,
+    "reader_roi": 23.0,
+    "composite_score": 94.0
+  },
+  "slop_analysis": {
+    "slop_score": 0.0,
+    "detected_buzzwords": [],
+    "emoji_count": 0,
+    "slop_detected": false
+  },
+  "domain_drc_checks": {
+    "passed": true,
+    "checks_run": [
+      "embedded_mains_ac_isolation",
+      "embedded_lipo_protection"
+    ],
+    "violations": []
+  },
+  "grounding_verification": {
+    "grounding_percentage": 100.0,
+    "unverified_claims": [],
+    "cited_sources": [
+      "project_registry:proj_media_agency",
+      "knowledge_fact:Engineered an Autonomous Personal Media Agency: 9-stage persistent lifecycle, cryptographic SHA-256 approval gating, zero-slop Design Rule Checks, and multi-channel Buffer MCP publishing.",
+      "git_commit:56e7469"
+    ]
+  },
+  "verdict": "PASSED_EDITORIAL"
+}

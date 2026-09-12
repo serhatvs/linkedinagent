@@ -14,5 +14,12 @@
     "total_score": 3.0
   },
   "decision": "HOLD_NO_OP",
-  "hold_rationale": "Purely conceptual. Missing bench comparison, hardware benchmarks, and logic traces."
+  "hold_rationale": "Purely conceptual. Missing bench comparison, hardware benchmarks, and logic traces.",
+  "parent_candidate_id": null,
+  "revival_reason": null,
+  "revived_by": null,
+  "revived_at": null,
+  "override_reason": null,
+  "overridden_by": null,
+  "overridden_at": null
 }

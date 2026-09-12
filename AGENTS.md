@@ -22,11 +22,11 @@ The agency is strictly empowered to choose **NO-OP (Publish Nothing)** whenever 
    - The agency is fully authorized to autonomously:
      - Read local project repositories, git logs, diffs, and lab notes.
      - Query approved GitHub MCP endpoints in read-only mode.
-     - Fetch Metricool analytics and performance data in read-only mode.
+     - Fetch Buffer analytics and performance data in read-only mode.
      - Formulate ideas, draft technical write-ups, run editorial evaluations, and maintain internal memory.
 
 3. **Zero Credential Faking & Zero Scraping**:
-   - Never generate fake credentials, simulate browser clicks, scrape LinkedIn via Puppeteer/Selenium/Playwright, or interact with private endpoints outside official MCP gateways (Metricool, GitHub).
+   - Never generate fake credentials, simulate browser clicks, scrape LinkedIn via Puppeteer/Selenium/Playwright, or interact with private endpoints outside official MCP gateways (Buffer, GitHub).
 
 ---
 
@@ -75,6 +75,6 @@ All content must flow through the canonical lifecycle without skipping states:
 - **Writer (`writer`)**: Writes in first-person authentic builder voice.
 - **Editorial Reviewer (`editorial-review`)**: Enforces 5-point quality scorecard (Technical Rigor, Grounding, Slop Index, Visual Utility, Reader ROI).
 - **Creative Planner (`creative-planner`)**: Specifies precise technical media assets (schematics, oscilloscope captures, CAD renders, terminal output).
-- **Publisher Gateway (`publisher`)**: Enforces signed token checks before dispatching to Metricool MCP.
+- **Publisher Gateway (`publisher`)**: Enforces signed token checks before dispatching to Buffer MCP (SocialPublisher interface).
 - **Community Manager (`community-manager`)**: Ingests comments, triages high-signal leads, drafts responses for human approval.
 - **Analytics & Learning (`analytics-learning`)**: Quantifies technical brand resonance, updates `memory/lessons_learned.json`.

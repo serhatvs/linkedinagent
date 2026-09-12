@@ -1,0 +1,36 @@
+{
+  "evaluation_id": "eval_3f16bcd9d79e",
+  "post_id": "post_usb_display_tiling",
+  "evaluated_at": "2026-09-11T13:30:51.839803+00:00",
+  "scores": {
+    "technical_rigor": 24.0,
+    "clarity_and_flow": 23.0,
+    "visual_utility": 24.0,
+    "reader_roi": 23.0,
+    "composite_score": 94.0
+  },
+  "slop_analysis": {
+    "slop_score": 0.0,
+    "detected_buzzwords": [],
+    "emoji_count": 0,
+    "slop_detected": false
+  },
+  "domain_drc_checks": {
+    "passed": true,
+    "checks_run": [
+      "ai_benchmark_integrity"
+    ],
+    "violations": []
+  },
+  "grounding_verification": {
+    "grounding_percentage": 100.0,
+    "unverified_claims": [],
+    "cited_sources": [
+      "project_registry:proj_usb_display",
+      "knowledge_fact:Windows Desktop Duplication API + NVIDIA NVENC hardware encoding",
+      "knowledge_fact:Android MediaCodec dual-surface tiling over ADB reverse TCP",
+      "git_commit:532ac00"
+    ]
+  },
+  "verdict": "PASSED_EDITORIAL"
+}

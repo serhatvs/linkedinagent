@@ -27,6 +27,7 @@
         "REVIEWED",
         "AWAITING_APPROVAL",
         "APPROVED",
+        "AUTO_APPROVED",
         "SCHEDULED",
         "PUBLISHED",
         "ANALYZED"

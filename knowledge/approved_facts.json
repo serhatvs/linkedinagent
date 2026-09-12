@@ -38,7 +38,8 @@
       "Architected JARVIS: a persistent cognitive operating system with append-only experience ledgers, belief extraction pipelines, and durable task execution.",
       "Designed a distributed 3-MCU 3D printer hardware architecture separating real-time motion (ESP32-S3) from UI (ESP32-S3) and auxiliary I/O (Arduino Mega).",
       "Designed LeShield: a privacy-preserving programmable trust infrastructure for Monad using client-side Groth16 ZK-proofs.",
-      "Built Chronos RAG: a zero-budget, local FAISS vector indexing pipeline using deterministic heading-aware Markdown chunking."
+      "Built Chronos RAG: a zero-budget, local FAISS vector indexing pipeline using deterministic heading-aware Markdown chunking.",
+      "Engineered an Autonomous Personal Media Agency: persistent, strictly validated 9-stage lifecycle, HMAC-SHA256 authenticated approval gating, zero-slop Design Rule Checks, and multi-channel Buffer MCP publishing."
     ],
     "unapproved_or_prohibited_claims": [
       "Any claim of holding a Master's or Ph.D. degree.",

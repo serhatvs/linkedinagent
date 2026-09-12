@@ -1,0 +1,42 @@
+{
+  "permission_policy_version": "1.0.0",
+  "principle": "LEAST_PRIVILEGE_MINIMAL_ALLOWLIST",
+  "anti_patterns": [
+    "NEVER grant blanket 'mcp(*)'",
+    "NEVER globally disable user confirmation",
+    "NEVER authorize external writes without explicit hash verification"
+  ],
+  "recommended_antigravity_permissions": {
+    "metricool": {
+      "auto_allow_read_tools": [
+        "mcp.metricool-mcp.get_social_network_analytics",
+        "mcp.metricool-mcp.get_best_times_to_publish",
+        "mcp.metricool-mcp.list_scheduled_posts"
+      ],
+      "gated_write_tools": [
+        {
+          "tool": "mcp.metricool-mcp.schedule_post",
+          "condition": "Requires either valid HMAC human approval token from Serhat OR valid PolicySigner AUTO_APPROVAL token verified by ApprovalEngine."
+        }
+      ],
+      "strictly_denied_or_ask_tools": [
+        "mcp.metricool-mcp.delete_post",
+        "mcp.metricool-mcp.reply_comment",
+        "mcp.metricool-mcp.send_message",
+        "mcp.metricool-mcp.update_profile"
+      ]
+    },
+    "github": {
+      "auto_allow_read_tools": [
+        "gh.read(*)",
+        "git.read(*)"
+      ],
+      "strictly_denied_write_tools": [
+        "gh.create(*)",
+        "gh.update(*)",
+        "gh.merge(*)",
+        "git.push(*)"
+      ]
+    }
+  }
+}

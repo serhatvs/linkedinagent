@@ -1,0 +1,53 @@
+{
+  "post_id": "post_usb_display_x",
+  "state_version": 1,
+  "lifecycle_state": "APPROVED",
+  "pillar": "pillar_software_infrastructure",
+  "author": "Serhat",
+  "title": "Android tablet 2560x1600 Windows extended display over USB",
+  "content_text": "Turned an Android tablet into a native 2560x1600 Windows extended monitor over USB.\n\nDecoder limits blocked full frames, so it runs two 2560x800 NVENC streams concurrently.\n\nSustained 45.3 fps with 48 ms median latency at 20.0 Mbit/s.",
+  "media_assets": [
+    {
+      "asset_type": "product_photo",
+      "asset_path": "assets/user_submissions/cand_usb_01_usb_display_lenovo_desktop_photo.jpg",
+      "asset_sha256": "70d99cee2045f62ed6678657639824be020aa408326b66ae8ee1ed48560d9d9d",
+      "caption": "Lenovo TB336FU Android tablet running native 2560x1600 Windows extended display alongside laptop over USB cable.",
+      "source_priority": "EXISTING_PROJECT_ASSET",
+      "archetype": null,
+      "is_synthetic": false,
+      "synthetic_purpose": null,
+      "real_evidence_ref": "Drive File ID: 1LZyRxsQ9m4Zw7kN9oSKI97rPBYTKE9J9 (root POSTASSEST)"
+    }
+  ],
+  "citations": [
+    {
+      "claim_text": "usb-display native 2560x1600 @ 45fps over USB with dual-strip NVENC tiling",
+      "source_type": "project_registry",
+      "reference_id": "proj_usb_display"
+    },
+    {
+      "claim_text": "Windows Desktop Duplication API + NVIDIA NVENC hardware encoding",
+      "source_type": "knowledge_fact",
+      "reference_id": "Windows Desktop Duplication API + NVIDIA NVENC hardware encoding"
+    },
+    {
+      "claim_text": "Android MediaCodec dual-surface tiling over ADB reverse TCP",
+      "source_type": "knowledge_fact",
+      "reference_id": "Android MediaCodec dual-surface tiling over ADB reverse TCP"
+    },
+    {
+      "claim_text": "Record the measured latency, and the hypothesis it disproved (fixed pipeline delay vs queue backlog)",
+      "source_type": "git_commit",
+      "reference_id": "532ac00"
+    }
+  ],
+  "scorecard_id": null,
+  "approval_request_id": "appr_req_20260911_134953_48d81d",
+  "scheduled_publish_time": null,
+  "metricool_post_id": null,
+  "buffer_post_id": null,
+  "remote_post_id": null,
+  "linkedin_url": null,
+  "created_at": "2026-09-11T13:49:53.675954+00:00",
+  "updated_at": "2026-09-11T13:49:53.675961+00:00"
+}

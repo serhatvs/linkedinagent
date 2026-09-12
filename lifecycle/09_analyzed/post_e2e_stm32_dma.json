@@ -11,7 +11,12 @@
       "asset_type": "logic_trace",
       "asset_path": "assets/stm32h7_dma_trace.png",
       "asset_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "caption": "Saleae Logic Pro 16 capture showing SPI display vs DCMI DMA bus arbitration."
+      "caption": "Saleae Logic Pro 16 capture showing SPI display vs DCMI DMA bus arbitration.",
+      "source_priority": "EXISTING_PROJECT_ASSET",
+      "archetype": null,
+      "is_synthetic": false,
+      "synthetic_purpose": null,
+      "real_evidence_ref": null
     }
   ],
   "citations": [
@@ -26,11 +31,13 @@
       "reference_id": "stm32 (arm cortex-m4/m7)"
     }
   ],
-  "scorecard_id": "eval_70b111dd9dab",
-  "approval_request_id": "appr_req_20260910_210711_75a61f",
-  "scheduled_publish_time": "2026-09-12T21:07:11.674375+00:00",
-  "metricool_post_id": "metricool_mock_3809e179d76c",
-  "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:activity:metricool_mock_3809e179d76c/",
-  "created_at": "2026-09-10T21:07:11.665208+00:00",
-  "updated_at": "2026-09-10T21:07:11.749383+00:00"
+  "scorecard_id": "eval_a28974d71eac",
+  "approval_request_id": "appr_req_20260912_124649_6cf52f",
+  "scheduled_publish_time": "2026-09-14T12:46:49.767155+00:00",
+  "metricool_post_id": "metricool_mock_97aaf40bc220",
+  "buffer_post_id": null,
+  "remote_post_id": null,
+  "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:activity:metricool_mock_97aaf40bc220/",
+  "created_at": "2026-09-12T12:46:49.754892+00:00",
+  "updated_at": "2026-09-12T12:46:49.889097+00:00"
 }

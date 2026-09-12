@@ -7,6 +7,7 @@ substance scoring, and generates formal Editorial Scorecards.
 from __future__ import annotations
 import re
 import uuid
+from pathlib import Path
 from typing import List, Dict, Any, Tuple
 from core.models import (
     Post,
@@ -47,8 +48,11 @@ EMOJI_PATTERN = re.compile(r"[\U00010000-\U0010ffff]", flags=re.UNICODE)
 
 
 class EditorialEvaluator:
-    def __init__(self, grounding_engine: GroundingEngine):
-        self.grounding_engine = grounding_engine
+    def __init__(self, grounding_engine: GroundingEngine | Path):
+        if isinstance(grounding_engine, Path):
+            self.grounding_engine = GroundingEngine(grounding_engine)
+        else:
+            self.grounding_engine = grounding_engine
 
     def analyze_slop(self, text: str) -> SlopAnalysis:
         text_lower = text.lower()
@@ -97,11 +101,22 @@ class EditorialEvaluator:
             if not any(w in text_lower for w in ["bms", "protection circuit", "pcm", "undervoltage", "cutoff"]):
                 violations.append("DRC VIOLATION: LiPo battery usage mentioned without documenting BMS or over-discharge protection.")
 
-        # 3. Embedded: Logic Level Matching
-        if "esp32" in text_lower and "5v" in text_lower:
+        # 3. Embedded: Logic Level Matching (Scoped strictly to published claims)
+        esp32_5v_hazard_patterns = [
+            r"esp32.*\b(directly (interfaces|connected|wired|tied)|tolerates 5v directly|no level shift|without level shift)\b",
+            r"\b(directly (connect|wire|interface|connected|wired) 5v (to|into|with) esp32)\b",
+            r"\b(connect|wire|interface|connected|wired|fed)\s+5v\s+directly\s+(to|into|with)\s+esp32\b",
+            r"\b(fed 5v directly into esp32|esp32 directly receives 5v)\b",
+            r"\besp32 safely interfaces directly with a 5v signal\b",
+            r"\b5v directly to esp32\b",
+            r"\besp32.*without level (shift|shifter).*5v\b",
+            r"\b5v.*without level (shift|shifter).*esp32\b"
+        ]
+        if any(re.search(p, text_lower) for p in esp32_5v_hazard_patterns):
             checks_run.append("embedded_esp32_5v_level_matching")
-            if not any(w in text_lower for w in ["level shifter", "divider", "shifter", "3.3v tolerant"]):
-                violations.append("DRC WARNING: ESP32 paired with 5V logic without explicit reference to level shifting.")
+            violations.append("DRC VIOLATION: Published copy asserts direct electrical interfacing between 5V logic and 3.3V ESP32 GPIOs without level shifting.")
+        elif "esp32" in text_lower and "5v" in text_lower:
+            checks_run.append("embedded_esp32_5v_level_matching")
 
         # 4. Robotics: Sim-vs-Real Transparency
         if any(w in text_lower for w in ["gazebo", "isaac sim", "pybullet", "simulation"]):

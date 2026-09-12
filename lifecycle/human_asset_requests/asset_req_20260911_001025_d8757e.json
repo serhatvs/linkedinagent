@@ -1,0 +1,18 @@
+{
+  "request_id": "asset_req_20260911_001025_d8757e",
+  "candidate_id": "cand_jarvis_02",
+  "target_platforms": [
+    "instagram"
+  ],
+  "requested_asset_title": "Real Asset Request: App Ui",
+  "specific_instructions": "Please capture a crisp screenshot of the JARVIS desktop interface showing the active memory ledger and live system telemetry HUD during task execution.",
+  "why_needed": "Instagram audience requires an authentic, aesthetic build visual showing the real OS running in practice.",
+  "recommended_shots": [
+    "Full UI screenshot in dark mode showing belief extraction log"
+  ],
+  "status": "PENDING",
+  "created_at": "2026-09-11T00:10:25.507957+00:00",
+  "fulfilled_asset_path": null,
+  "fulfilled_at": null,
+  "asset_sha256": null
+}

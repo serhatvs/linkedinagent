@@ -1,0 +1,38 @@
+{
+  "post_id": "post_expired_30be854e",
+  "state_version": 5,
+  "lifecycle_state": "REVALIDATION_REQUIRED",
+  "pillar": "pillar_low_level_systems_and_graphics",
+  "author": "Serhat",
+  "title": "Expired Post Test 30be854e",
+  "content_text": "Content for expired post test 30be854e.",
+  "media_assets": [
+    {
+      "asset_type": "architecture_diagram",
+      "asset_path": "assets/diagram.png",
+      "asset_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "caption": "Architecture Diagram",
+      "source_priority": "DETERMINISTIC_COMPOSED_ASSET",
+      "archetype": "architecture_diagram",
+      "is_synthetic": false,
+      "synthetic_purpose": null,
+      "real_evidence_ref": null
+    }
+  ],
+  "citations": [
+    {
+      "claim_text": "skill",
+      "source_type": "knowledge_fact",
+      "reference_id": "c++"
+    }
+  ],
+  "scorecard_id": null,
+  "approval_request_id": null,
+  "scheduled_publish_time": null,
+  "metricool_post_id": null,
+  "buffer_post_id": null,
+  "remote_post_id": null,
+  "linkedin_url": null,
+  "created_at": "2026-09-11T13:44:56.035211+00:00",
+  "updated_at": "2026-09-11T13:44:56.215356+00:00"
+}

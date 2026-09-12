@@ -1,42 +1,141 @@
 {
-  "server_name": "metricool-mcp",
-  "connection_status": "OFFLINE_SIMULATION_ONLY",
-  "authentication_status": "NO_TOKEN_CONFIGURED",
-  "auth_variables": [
-    "METRICOOL_USER_TOKEN",
-    "METRICOOL_BLOG_ID"
-  ],
-  "transport": "stdio",
-  "command": "python -m core.mcp_gateways --server metricool",
-  "detected_capabilities": {
-    "tools_exposed": [
-      "metricool_schedule_post (GATED)",
-      "metricool_get_analytics (DRY_RUN)",
-      "metricool_get_comments (DRY_RUN)"
-    ],
-    "read_capabilities": {
-      "live_post_analytics": false,
-      "live_profile_analytics": false,
-      "live_comment_stream": false,
-      "dry_run_simulation_analytics": true
-    },
-    "write_capabilities": {
-      "schedule_post": false,
-      "publish_post": false,
-      "reply_comment": false,
-      "send_dm": false
-    },
-    "analytics_capabilities": {
-      "impressions": false,
-      "engagements": false,
-      "clicks": false,
-      "follower_growth": false
-    }
+  "server_name": "metricool-native-mcp",
+  "endpoint_url": "https://ai.metricool.com/mcp",
+  "architecture_type": "NATIVE_MCP_SSE_ENDPOINT",
+  "authentication": {
+    "status": "AUTHENTICATED",
+    "protocol": "OAuth 2.0 PKCE (RFC 8414)",
+    "authenticated_user": "s.yavuz.dev@gmail.com",
+    "user_id": 5333283,
+    "authenticated_at": "2026-09-11T01:35:09Z"
   },
-  "limitations": [
-    "METRICOOL_USER_TOKEN and METRICOOL_BLOG_ID are not set in the environment.",
-    "Real historical LinkedIn post data cannot be fetched from the Metricool API without active credentials.",
-    "External publishing is strictly blocked both by missing credentials and by the agency's human-in-the-loop cryptographic approval gate."
+  "brand_workspace": {
+    "brand_id": "6921251",
+    "owner_user_id": 5333283,
+    "owner_username": "s.yavuz.dev@gmail.com",
+    "timezone": "Europe/Istanbul",
+    "engagement_ratio": 100,
+    "networks_data": {},
+    "is_shared": false
+  },
+  "linkedin_target": {
+    "connected": false,
+    "target_type": "UNKNOWN",
+    "target_identifier": null,
+    "account_name": null,
+    "connection_instruction": "Connect LinkedIn Personal Profile in Metricool web dashboard (https://app.metricool.com/) under Brand ID 6921251"
+  },
+  "detected_native_mcp_tools": [
+    {
+      "name": "getBrandSettings",
+      "category": "account",
+      "scope": "mcp:read",
+      "operation_type": "READ",
+      "description": "Get the list of brands and connected social networks from your Metricool account.",
+      "required_parameters": []
+    },
+    {
+      "name": "getScheduledPosts",
+      "category": "planning",
+      "scope": "mcp:read",
+      "operation_type": "READ",
+      "description": "Get the list of scheduled posts for a specific Metricool brand (brandId). Only retrieves posts that are scheduled (not yet published).",
+      "required_parameters": ["brandId", "fromDate", "toDate", "timezone"]
+    },
+    {
+      "name": "getAnalyticsAvailableMetrics",
+      "category": "analytics",
+      "scope": "mcp:read",
+      "operation_type": "READ",
+      "description": "Retrieves the list of available metrics for a specific social network and connector.",
+      "required_parameters": []
+    },
+    {
+      "name": "getAnalyticsDataByMetrics",
+      "category": "analytics",
+      "scope": "mcp:read",
+      "operation_type": "READ",
+      "description": "Retrieves analytical data for a specified Metricool account over a given date range, based on a selected list of metrics.",
+      "required_parameters": ["brandId", "from", "to"]
+    },
+    {
+      "name": "getBestTimeToPostByNetwork",
+      "category": "strategy",
+      "scope": "mcp:read",
+      "operation_type": "READ",
+      "description": "Get empirical hourly/daily audience engagement distribution for a specific provider (e.g. linkedin) over a 1-week period.",
+      "required_parameters": ["brandId", "fromDate", "toDate", "timezone", "socialNetwork"]
+    },
+    {
+      "name": "createScheduledPost",
+      "category": "publishing",
+      "scope": "mcp:write",
+      "operation_type": "WRITE",
+      "description": "Schedule a new post directly to Metricool at a specific date and time for automatic or push publishing across providers (LinkedIn, X, etc.).",
+      "required_parameters": ["blogId", "date", "info"]
+    },
+    {
+      "name": "createScheduledPostForReview",
+      "category": "publishing_review",
+      "scope": "mcp:write",
+      "operation_type": "WRITE",
+      "description": "Schedule a NEW post and submit it to Metricool's internal team collaborative review/approval flow.",
+      "required_parameters": ["blogId", "date", "info", "reviewers", "approvalSystem"]
+    },
+    {
+      "name": "sendScheduledPostForReview",
+      "category": "publishing_review",
+      "scope": "mcp:write",
+      "operation_type": "WRITE",
+      "description": "Send an ALREADY scheduled post (identified by id and uuid) into Metricool's internal team review/approval flow.",
+      "required_parameters": ["id", "uuid", "blogId", "info", "reviewers", "approvalSystem"]
+    },
+    {
+      "name": "updateScheduledPost",
+      "category": "publishing",
+      "scope": "mcp:write",
+      "operation_type": "WRITE",
+      "description": "Update the content, media, or publication timing of an existing scheduled post in Metricool.",
+      "required_parameters": ["id", "uuid", "blogId", "info"]
+    }
   ],
-  "degraded_mode_behavior": "Historical LinkedIn analytics are marked as UNAVAILABLE. The agency operates in strict dry-run mode for dispatch and refuses to hallucinate historical audience numbers. Pipeline relies on local benchmarks and known audience signals."
+  "publishing_workflow_analysis": {
+    "primary_publishing_tool": "createScheduledPost",
+    "review_workflow_tool": "sendScheduledPostForReview",
+    "distinction": "sendScheduledPostForReview operates ONLY on existing, already-scheduled posts (requires id and uuid from getScheduledPosts) to submit them to Metricool's internal team review system. For autonomous agent publishing with our own cryptographic policy gate, the primary execution tool is createScheduledPost with info.autoPublish=true."
+  },
+  "discovered_linkedin_analytics": {
+    "total_metrics_count": 51,
+    "connectors": {
+      "evolution": {
+        "count": 24,
+        "key_metrics": ["followers", "posts", "postsLikes", "postsComments", "postsClicks", "deltaFollowers", "Interactions", "postsImpressions", "postsShares", "accountPostShares", "accountPostReactions", "accountPostImpressions", "accountPostComments", "postsEngagement"]
+      },
+      "posts": {
+        "count": 19,
+        "key_metrics": ["created", "title", "comment", "postId", "url", "clicks", "comments", "impressions", "likes", "videoViews", "shares", "uniqueImpressions", "likeReactions", "entertainmentReactions", "interestReactions", "praiseReactions", "empathyReactions", "appreciationReactions", "postsEngagement"]
+      },
+      "demographics_performance": {
+        "count": 8,
+        "key_metrics": ["views", "likes", "comments", "shares", "clicks", "engagement"]
+      }
+    },
+    "personal_account_specific_metrics": [
+      "LIPO20: uniqueImpressions (Applies only to personal accounts)"
+    ],
+    "company_page_specific_metrics": [
+      "LIEV11-17: newsletters, newslettersClicks, newslettersLikes, newslettersComments, newslettersInteractions, newslettersImpressions, newslettersEngagement",
+      "LIEV24: accountPostClicks",
+      "LIEV29-31: accountPageButtonClicks, accountPageUniqueImpressions, accountPageImpressions"
+    ]
+  },
+  "read_only_test_results": {
+    "getBrandSettings": "SUCCESS (Brand 6921251 detected, networksData={})",
+    "getAnalyticsAvailableMetrics": "SUCCESS (51 LinkedIn metrics cataloged)",
+    "getBestTimeToPostByNetwork": "SUCCESS (Full 7-day heatmap returned for linkedin / Europe/Istanbul)",
+    "getAnalyticsDataByMetrics": "SUCCESS (Returned empty dataset rows: [] for 2026-08-01..2026-09-11)",
+    "getScheduledPosts": "SUCCESS (Returned data: [])"
+  },
+  "current_status": "AUTHENTICATED_AWAITING_LINKEDIN_CONNECTION",
+  "production_blocker": "BLOCKED_NO_LINKEDIN_ACCOUNT_CONNECTED"
 }

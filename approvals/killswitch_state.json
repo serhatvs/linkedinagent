@@ -1,6 +1,7 @@
 {
+  "mode": "AUTONOMY_ENABLED",
   "agency_frozen": false,
-  "reason": "Audit complete",
-  "updated_at": "2026-09-10T21:07:11.654445+00:00",
+  "reason": "Test restored",
+  "updated_at": "2026-09-12T12:46:50.784107+00:00",
   "authorized_by": "Serhat"
 }

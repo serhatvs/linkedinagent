@@ -116,6 +116,28 @@
         "DMA buffer ping-pong optimization reducing memory bus contention by 24%",
         "Thermal characterization under sustained 20 FPS inference"
       ]
+    },
+    {
+      "project_id": "proj_media_agency",
+      "name": "Autonomous Personal Media Agency: Evidence-Grounded Multi-Platform Brand Engine",
+      "pillar": "pillar_software_infrastructure",
+      "repo_url": "https://github.com/serhatvs/linkedinagent",
+      "summary": "Autonomous desktop-class personal media operations agency enforcing evidence grounding, a persistent, strictly validated 9-stage lifecycle, HMAC-SHA256 authenticated human approval gates, and multi-channel Buffer publishing.",
+      "tech_stack": ["Python 3.13", "AsyncIO", "Pydantic v2", "OAuth 2.0 PKCE", "HMAC-SHA256", "Buffer MCP", "Google Drive API", "FastAPI / PySide6"],
+      "verified_metrics": {
+        "lifecycle_stages": 9,
+        "external_autonomous_writes": 0,
+        "unit_and_integration_tests": 86,
+        "test_pass_rate_percent": 100.0,
+        "supported_channels": ["LinkedIn", "Instagram", "X"],
+        "slop_tolerance": 0.0,
+        "evidence_hierarchy_rule": "Physical evidence and git commits strictly required; text-only posts prohibited"
+      },
+      "active_milestones": [
+        "Strict Google Drive root sandboxing with real thumbnail proxy",
+        "Deterministic Design Rule Checks (DRC) for hardware safety and simulation transparency",
+        "Cryptographic approval envelope requiring human signed tokens before external dispatch"
+      ]
     }
   ]
 }

@@ -1,0 +1,40 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Caches and environment
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+.env
+*.env
+*.key
+*.pem
+
+# Scratch and transient development files
+scratch/
+test_audio.wav
+assets/promo_audio_soundtrack.wav
+
+# Sensitive credentials & runtime configs
+knowledge/drive_oauth_credentials.json
+knowledge/drive_config.json
+
+# Approval payloads and signed tokens (preserve directory structure via .gitkeep)
+approvals/signed/*
+!approvals/signed/.gitkeep
+approvals/pending/*
+!approvals/pending/.gitkeep
+approvals/rejected/*
+!approvals/rejected/.gitkeep
+
+# Asset thumbnails cache
+assets/.cache/
+
+# OS-generated metadata
+.DS_Store
+Thumbs.db
+desktop.ini

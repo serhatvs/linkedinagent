@@ -1,0 +1,26 @@
+{
+  "post_id": "post_expired_eb32caf5",
+  "state_version": 5,
+  "lifecycle_state": "REVALIDATION_REQUIRED",
+  "pillar": "pillar_low_level_systems_and_graphics",
+  "author": "Serhat",
+  "title": "Expired Post Test eb32caf5",
+  "content_text": "Content for expired post test eb32caf5.",
+  "media_assets": [],
+  "citations": [
+    {
+      "claim_text": "skill",
+      "source_type": "knowledge_fact",
+      "reference_id": "c++"
+    }
+  ],
+  "scorecard_id": null,
+  "approval_request_id": null,
+  "scheduled_publish_time": null,
+  "metricool_post_id": null,
+  "buffer_post_id": null,
+  "remote_post_id": null,
+  "linkedin_url": null,
+  "created_at": "2026-09-10T23:55:24.731058+00:00",
+  "updated_at": "2026-09-10T23:55:24.801014+00:00"
+}

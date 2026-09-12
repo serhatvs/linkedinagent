@@ -1,0 +1,26 @@
+{
+  "post_id": "post_expired_5c2247b2",
+  "state_version": 5,
+  "lifecycle_state": "REVALIDATION_REQUIRED",
+  "pillar": "pillar_low_level_systems_and_graphics",
+  "author": "Serhat",
+  "title": "Expired Post Test 5c2247b2",
+  "content_text": "Content for expired post test 5c2247b2.",
+  "media_assets": [],
+  "citations": [
+    {
+      "claim_text": "skill",
+      "source_type": "knowledge_fact",
+      "reference_id": "c++"
+    }
+  ],
+  "scorecard_id": null,
+  "approval_request_id": null,
+  "scheduled_publish_time": null,
+  "metricool_post_id": null,
+  "buffer_post_id": null,
+  "remote_post_id": null,
+  "linkedin_url": null,
+  "created_at": "2026-09-10T23:58:58.140899+00:00",
+  "updated_at": "2026-09-10T23:58:58.201195+00:00"
+}

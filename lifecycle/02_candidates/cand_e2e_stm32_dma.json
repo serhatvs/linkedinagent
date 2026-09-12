@@ -15,5 +15,12 @@
     "total_score": 9.8
   },
   "decision": "PROCEED_TO_DRAFT",
-  "hold_rationale": null
+  "hold_rationale": null,
+  "parent_candidate_id": null,
+  "revival_reason": null,
+  "revived_by": null,
+  "revived_at": null,
+  "override_reason": null,
+  "overridden_by": null,
+  "overridden_at": null
 }

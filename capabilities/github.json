@@ -1,39 +1,46 @@
 {
   "server_name": "github-mcp",
-  "connection_status": "DEGRADED_FALLBACK_ACTIVE",
-  "authentication_status": "NO_TOKEN_CONFIGURED",
-  "auth_variable": "GITHUB_PERSONAL_ACCESS_TOKEN",
-  "transport": "stdio",
-  "command": "npx -y @modelcontextprotocol/server-github",
+  "connection_status": "AUTHENTICATED_KEYRING_ACTIVE",
+  "authentication_status": "LOGGED_IN",
+  "authenticated_account": "serhatvs",
+  "auth_method": "GitHub CLI Windows Keyring (OAuth)",
+  "token_scopes": [
+    "gist",
+    "read:org",
+    "repo",
+    "workflow"
+  ],
   "detected_capabilities": {
     "tools_exposed": [
-      "read_url_content (HTTP fallback)",
-      "git_local_cli (Local workspace fallback)"
+      "gh repo list",
+      "gh repo view",
+      "gh api (REST / GraphQL)",
+      "git local cli (D:\\Workspace\\*)"
     ],
     "read_capabilities": {
       "public_repos": true,
-      "public_commits": true,
-      "public_readme": true,
-      "private_repos": false,
-      "private_issues": false,
+      "private_repos": true,
+      "commit_trees_and_diffs": true,
+      "pull_requests_and_reviews": true,
+      "issues_and_discussions": true,
       "local_repos_on_disk": true
     },
     "write_capabilities": {
       "create_issue": false,
       "create_pull_request": false,
       "commit_changes": false,
-      "fork_repo": false
+      "merge_pr": false,
+      "note": "Write actions are strictly blocked by agency policy boundaries."
     },
     "analytics_capabilities": {
-      "traffic_clones": false,
-      "traffic_views": false,
+      "traffic_clones": true,
+      "traffic_views": true,
       "stargazers_history": true
     }
   },
   "limitations": [
-    "GITHUB_PERSONAL_ACCESS_TOKEN is not set in environment.",
-    "Unauthenticated GitHub API queries are subject to 60 requests/hour IP rate limiting.",
-    "Private repositories cannot be queried via remote API; local disk git inspection is utilized instead."
+    "External writes to GitHub remain disabled per Rule 2 (Prime Directive).",
+    "Public/private repository reading is authenticated and operational."
   ],
-  "degraded_mode_behavior": "The agency falls back to direct local git repository inspection (reading local commit logs, diffs, and trees from D:\\Workspace) and public unauthenticated REST queries. No mock data is fabricated."
+  "degraded_mode_behavior": "Full authenticated reading is active. If offline, falls back to direct local git disk inspection."
 }
