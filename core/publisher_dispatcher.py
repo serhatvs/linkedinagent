@@ -344,6 +344,45 @@ class PublisherDispatcher:
             "timestamp": datetime.now(timezone.utc).isoformat()
         })
 
+        # 9. Strictly validated sequential lifecycle progression: APPROVED -> SCHEDULED -> PUBLISHED
+        # Direct APPROVED -> PUBLISHED transitions are strictly forbidden.
+        existing_post = self.lifecycle_manager.get_post(post.post_id)
+        if existing_post and existing_post.lifecycle_state in [LifecycleState.APPROVED, LifecycleState.AUTO_APPROVED]:
+            # Step 1: APPROVED -> SCHEDULED
+            sched_post = self.lifecycle_manager.transition(
+                post.post_id,
+                LifecycleState.SCHEDULED,
+                expected_version=existing_post.state_version
+            )
+            self._append_audit_log({
+                "event": "LIFECYCLE_TRANSITION",
+                "post_id": post.post_id,
+                "from_state": existing_post.lifecycle_state.value,
+                "to_state": LifecycleState.SCHEDULED.value,
+                "state_version": sched_post.state_version,
+                "timestamp": datetime.now(timezone.utc).isoformat()
+            })
+
+            # Step 2: SCHEDULED -> PUBLISHED
+            pub_post = self.lifecycle_manager.transition(
+                post.post_id,
+                LifecycleState.PUBLISHED,
+                expected_version=sched_post.state_version
+            )
+            pub_post.remote_post_id = remote_id
+            pub_post.buffer_post_id = remote_id
+            if token.target_platform == "linkedin":
+                pub_post.linkedin_url = getattr(post, "linkedin_url", None)
+            self.lifecycle_manager.save_post_in_place(pub_post)
+            self._append_audit_log({
+                "event": "LIFECYCLE_TRANSITION",
+                "post_id": post.post_id,
+                "from_state": LifecycleState.SCHEDULED.value,
+                "to_state": LifecycleState.PUBLISHED.value,
+                "state_version": pub_post.state_version,
+                "timestamp": datetime.now(timezone.utc).isoformat()
+            })
+
         return result
 
     def _append_audit_log(self, entry: dict):

@@ -31,13 +31,13 @@
       "reference_id": "stm32 (arm cortex-m4/m7)"
     }
   ],
-  "scorecard_id": "eval_a28974d71eac",
-  "approval_request_id": "appr_req_20260912_124649_6cf52f",
-  "scheduled_publish_time": "2026-09-14T12:46:49.767155+00:00",
-  "metricool_post_id": "metricool_mock_97aaf40bc220",
+  "scorecard_id": "eval_31ca39df12af",
+  "approval_request_id": "appr_req_20260912_131324_74e75e",
+  "scheduled_publish_time": "2026-09-14T13:13:24.745121+00:00",
+  "metricool_post_id": "metricool_mock_07e7ca97b945",
   "buffer_post_id": null,
   "remote_post_id": null,
-  "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:activity:metricool_mock_97aaf40bc220/",
-  "created_at": "2026-09-12T12:46:49.754892+00:00",
-  "updated_at": "2026-09-12T12:46:49.889097+00:00"
+  "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:activity:metricool_mock_07e7ca97b945/",
+  "created_at": "2026-09-12T13:13:24.736545+00:00",
+  "updated_at": "2026-09-12T13:13:24.830621+00:00"
 }

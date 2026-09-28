@@ -1,7 +1,7 @@
 {
   "mode": "AUTONOMY_ENABLED",
   "agency_frozen": false,
-  "reason": "Test restored",
-  "updated_at": "2026-09-12T12:46:50.784107+00:00",
+  "reason": "Testing sequential dispatch transitions",
+  "updated_at": "2026-09-12T13:13:43.679308+00:00",
   "authorized_by": "Serhat"
 }

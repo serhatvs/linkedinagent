@@ -1,0 +1,43 @@
+{
+  "post_id": "post_media_agency_architecture",
+  "state_version": 4,
+  "lifecycle_state": "PUBLISHED",
+  "pillar": "pillar_software_infrastructure",
+  "author": "Serhat",
+  "title": "Autonomous Personal Media Agency on Linkedin",
+  "content_text": "Most AI social media tools are built to maximize volume: scraping feeds, generating shallow summaries, and spamming corporate buzzwords with generic rocket emojis.\n\nWhen you're building across systems programming, low-level graphics, robotics, and embedded hardware, posting ungrounded AI content destroys technical credibility immediately.\n\nTo solve this, I built an Autonomous Personal Media Agency with one core Prime Directive: Credibility Over Frequency. The agency is strictly empowered to choose NO-OP (publish nothing) whenever there is no sufficiently novel, grounded engineering progress to communicate.\n\nHere is the architectural foundation that enforces that:\n\n1. Zero Autonomous External Writes:\nThe agency can autonomously mine git diffs, inspect lab benchmarks, draft write-ups, and evaluate scorecards. But it cannot dispatch without a valid human approval token explicitly authorized by me. Every dispatch verifies the canonical payload hash against an HMAC-SHA256 authenticated approval receipt in approvals/signed/.\n\n2. Deterministic Design Rule Checks (DRC):\nBefore any technical post reaches review, it passes automated domain Design Rule Checks:\n- Hardware Safety: Verifies required mains isolation and protection constraints, plus BMS protection for LiPo battery setups.\n- Electrical Integrity: Flags direct interfacing between 5V logic and 3.3V microcontrollers without level shifting.\n- Grounding: 100% of claims must resolve to registered project records, lab hardware specs, or verified git commit SHAs.\n\n3. 9-Stage Persistent State Machine:\nContent flows through a persistent, strictly validated lifecycle: IDEA -> CANDIDATE -> DRAFT -> REVIEWED -> AWAITING_APPROVAL -> APPROVED -> SCHEDULED -> PUBLISHED -> ANALYZED. Skipping stages is programmatically forbidden.\n\n4. Evidence-First Visual Pipeline:\nText-only posts are prohibited across all channels. Every release requires verified technical assets\u2014schematics, hardware workbench photos, or architecture traces\u2014ingested via an authenticated Google Drive browser strictly sandboxed to an isolated root folder.\n\nWhen designing autonomous agent workflows, autonomous read and planning should be paired with zero-trust external execution. High-assurance agents need deterministic validation firewalls and HMAC-SHA256 authenticated human approval gates.",
+  "media_assets": [
+    {
+      "asset_type": "video",
+      "asset_path": "assets/autonomous_personal_media_agency_promo.mp4",
+      "asset_sha256": "302ba904ede067a37a570eaae91a1641e26cc52094ada1a0f3175612fd8e3167",
+      "caption": "Autonomous Personal Media Agency promo video: 9:16 vertical 1080x1920 dark-mode showcase.",
+      "source_priority": "EXISTING_PROJECT_ASSET",
+      "archetype": null,
+      "is_synthetic": false,
+      "synthetic_purpose": null,
+      "real_evidence_ref": "GitHub Release 0.1.0: autonomous_personal_media_agency_promo.mp4"
+    }
+  ],
+  "citations": [
+    {
+      "claim_text": "Autonomous Personal Media Agency: persistent, strictly validated 9-stage lifecycle, HMAC-SHA256 authenticated human approval gates, and multi-channel Buffer publishing.",
+      "source_type": "project_registry",
+      "reference_id": "proj_media_agency"
+    },
+    {
+      "claim_text": "v0.1.0 public release with 86/86 tests passing, MIT license, and zero credentials committed.",
+      "source_type": "git_commit",
+      "reference_id": "2f9be80"
+    }
+  ],
+  "scorecard_id": "eval_post_media_agency_architecture_130515",
+  "approval_request_id": "appr_req_20260912_130515_99ec1a",
+  "scheduled_publish_time": null,
+  "metricool_post_id": null,
+  "buffer_post_id": "6aa54e7766679b076f0d813a",
+  "remote_post_id": "6aa54e7766679b076f0d813a",
+  "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7504526082541387777",
+  "created_at": "2026-09-12T13:05:15.360601+00:00",
+  "updated_at": "2026-09-12T13:07:26.066Z"
+}
